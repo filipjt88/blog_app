@@ -13,10 +13,10 @@
                       <a class="nav-link" href="#">Blog post</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="views/register.view.php">Register</a>
+                      <a class="nav-link" href="./views/register.view.php">Register</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="././views/login.view.php">Login</a>
+                      <a class="nav-link" href="./views/login.view.php">Login</a>
                   </li>
               </ul>
           </div>
