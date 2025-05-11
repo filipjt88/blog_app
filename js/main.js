@@ -3,12 +3,12 @@ import { Dropdown, Collapse, initMDB } from "mdb-ui-kit";
 initMDB({ Dropdown, Collapse });
 
 // Validacija forme za registraciju
-
 document.getElementById('registerForm').addEventListener('submit', function(e) {
-    const username            = document.getElementById('username').value.trim();
-    const email               = document.getElementById('email').value.trim();
-    const password            = document.getElementById('password').value.trim();
-    const password_confirm    = document.getElementById('password_confirm').value.trim();
+    // Selektovanje elemenata i prikupljanje vrednosti 
+    const username  = document.getElementById('username').value.trim();
+    const email     = document.getElementById('email').value.trim();
+    const password  = document.getElementById('password').value.trim();
+    const password_confirm = document.getElementById('password_confirm').value.trim();
     const error = document.getElementById('error');
 
     let errorMsg = '';
