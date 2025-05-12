@@ -4,7 +4,7 @@ initMDB({ Dropdown, Collapse });
 
 // Validacija forme za registraciju
 document.getElementById('registerForm').addEventListener('submit', function(e) {
-    // Selektovanje elemenata i prikupljanje vrednosti 
+    // Selektovanje elemenata i prikupljanje vrednosti
     const username  = document.getElementById('username').value.trim();
     const email     = document.getElementById('email').value.trim();
     const password  = document.getElementById('password').value.trim();
@@ -25,7 +25,20 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
         e.preventDefault();
         error.textContent = errorMsg;
     }
+});
 
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
 
+    let error = '';
 
+    if(!email || !password) {
+        error = 'Popunite sva polja';
+    }
+
+    if(error) {
+        e.preventDefault();
+        document.getElementById('loginError').textContent = error;
+    }
 });
