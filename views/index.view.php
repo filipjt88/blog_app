@@ -24,6 +24,12 @@
                     Autor: <?= htmlspecialchars($post['username']) ?? 'Nepoznat' ?> |
                     Objavljeno : <?= date('d.m.Y. H:i', strtotime($post['created_at'])) ?>
                 </small>
+                <?php if($_SESSION['user_id'] == $post['user_id']): ?>
+                    <div class="mt-2">
+                        <a href="edit_post.php?id=<?=$post['id'] ?>" class="btn btn-sm btn-warning">Izmeni</a>
+                        <a href="delete_post.php?id=<?=$post['id'] ?>" class="btn btn-sm btn-danger">Obrisi</a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     <?php endforeach; ?>

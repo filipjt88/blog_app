@@ -1,6 +1,4 @@
 <?php session_start(); ?>
-<?php include 'parts/top.php'; ?>
-<?php include 'parts/navbar.php'; ?>
 <?php require_once('core/db.php'); ?>
 
 <?php
