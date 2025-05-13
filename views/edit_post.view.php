@@ -5,7 +5,7 @@
     <?php if(isset($_GET['error'])): ?>
         <div class="alert aler-danger"><?= htmlspecialchars($_GET['error']) ?></div>
     <?php endif; ?>
-    <form action="../edit_post.php" method="POST">
+    <form action="../edit_post_process.php" method="POST">
         <input type="hidden" name="id" value="<?= $post['id'] ?>">
         <div class="mb-3">
             <label for="title" class="form-label">Naslov</label>
