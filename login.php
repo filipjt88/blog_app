@@ -1,7 +1,6 @@
-<?php session_start(); ?>
-<?php require_once('core/db.php'); ?>
-
-<?php
+<?php 
+session_start();
+require_once('core/db.php');
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     $email = trim($_POST['email']);
@@ -18,6 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if(!$user || !password_verify($password, $user['password'])) {
         header("Location: login.php?error=" .urlencode("Pogresan email ili lozinka!"));
+
         exit;
     }
 
@@ -27,13 +27,9 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     $_SESSION['role'] = $user['role'];
 
     // Preusmerenje usera na pocetnu stranicu
-    header("Location: index.php");
+    header("Location: views/index.view.php");
 }
 
 
-
+include 'parts/bottom.php';
 ?>
-
-
-
-<?php include 'parts/bottom.php'; ?>

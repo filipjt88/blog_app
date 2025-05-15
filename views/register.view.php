@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-3 mt-5">
+        <div class="col-md-6 offset-2 mt-5">
             <h1 class="text-center">Registracija</h1>
             <form id="registerForm" action="../register.php" method="POST" novalidate>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Please enter username"><br>
@@ -12,6 +12,7 @@
                 <input type="password" id="password_confirm" name="password_confirm" class="form-control" placeholder="Please enter the password repeat"><br>
                 <button type="submit" class="btn btn btn-success">Registruj se</button>
             </form>
+            <a href="login.view.php" class="nav-link">Prijavite se!</a>
         </div>
     </div>
 </div>
