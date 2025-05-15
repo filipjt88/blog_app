@@ -17,7 +17,6 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if(!$user || !password_verify($password, $user['password'])) {
         header("Location: login.php?error=" .urlencode("Pogresan email ili lozinka 😒!"));
-
         exit;
     }
 

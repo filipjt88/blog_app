@@ -1,7 +1,5 @@
-<?php include 'core/db.php'; ?>
-<?php include 'parts/top.php'; ?>
-
-<?php
+<?php 
+include 'core/db.php';
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     // Prikupljanje podataka preko forme
@@ -45,9 +43,4 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     die("Ovo je nevazeci zahtev!");
 }
 
-
 ?>
-
-
-
-<?php include 'parts/bottom.php'; ?>
