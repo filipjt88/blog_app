@@ -6,7 +6,7 @@
                 <span class="me-2">Ulogovan kao: <strong><?= htmlspecialchars($_SESSION['user_username']) ?></strong></span>
                 <a href="../logout.php" class="btn btn-sm btn-outline-danger">Logout</a>
             <?php else: ?>
-                <a href="login.view.php" class="btn btn-sm btn-outline-primary">Login</a>
+                <a href="./views/login.view.php" class="btn btn-sm btn-outline-primary">Login</a>
             <?php endif; ?>
         </div>
     </div>

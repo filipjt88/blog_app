@@ -1,6 +1,5 @@
 <?php $title = 'Register'; ?>
 <?php include '../parts/top.php'; ?>
-<?php include '../parts/navbar.php'; ?>
 
 <div class="container">
     <div class="row">

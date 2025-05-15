@@ -2,7 +2,6 @@
 <?php include_once 'core/db.php'; ?>
 <?php $title = 'Home page'; ?>
 <?php include 'parts/top.php'; ?>
-<?php include 'parts/navbar.php'; ?>
 
 <?php
 

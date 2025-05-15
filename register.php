@@ -1,6 +1,5 @@
 <?php include 'core/db.php'; ?>
 <?php include 'parts/top.php'; ?>
-<?php include 'parts/navbar.php'; ?>
 
 <?php
 
