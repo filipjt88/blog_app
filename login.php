@@ -31,5 +31,4 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 }
 
 
-include 'parts/bottom.php';
 ?>
