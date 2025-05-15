@@ -1,8 +1,9 @@
 <?php
+$title = "Blog post";
 session_start();
 // Provera da li je user logovan
 if(!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: views/login.view.php");
     exit;
 }
 
@@ -24,7 +25,7 @@ include 'parts/top.php'; ?>
                 <textarea name="content" id="content" rows="6" class="form-control"></textarea>
             </div>
             <button type="submit" class="btn btn-success">Objavi</button>
-            <a href="index.php" class="btn btn-secondary">Vrati se nazad</a>
+            <a href="views/index.view.php" class="btn btn-secondary">Vrati se nazad</a>
         </form>
     </div>
 
