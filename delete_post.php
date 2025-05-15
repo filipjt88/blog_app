@@ -2,27 +2,32 @@
 session_start();
 require_once 'core/db.php';
 
-if(!isset($_GET['id']) || !isset($_SESSION['user_id'])) {
+if(!isset($_SESSION['user_id'])) {
+    header("Location: ./views/login.view.php");
+    exit;
+}
+
+if(!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header("Location: ./views/index.view.php");
     exit;
 }
 
-$post_id = $_GET['id'];
-$user_id = $_SESSION['user_id'];
+$post_id = (int) $_GET['id'];
 
-// Provera da li korisnik uopste ima pravo da obrise POST?!
-$stmt = $pdo->prepare("SELECT * FROM posts WHERE id = :id AND user_id = :user_id");
-$post = $stmt->fetch();
+$stmt = $pdo->prepare("SELECT * FROM posts WHERE id = ?");
+$stmt->execute([$post_id]);
+$post = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if(!$post) {
+if(!$post || $post['user_id'] != $_SESSION['user_id)']) {
     header("Location: ./views/index.view.php");
     exit;
 }
 
-$stmt = $pdo->prepare("DELETE FROM posts WHERE id = :id");
-$stmt->execute(['id' => $post_id]);
-
+// Obrisi Post
+$delete = $pdo->prepare("DELETE FROM posts WHERE id = ?");
+$delete->execute([$post_id]);
 header("Location: ./views/index.view.php");
 exit;
+
 
 ?>
