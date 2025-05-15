@@ -12,19 +12,19 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Provera da li su sva polja popunjena
     if(empty($username) || empty($email) || empty($password) || empty($password_confirm)) {
-        die("Sva polja su obavezna!");
+        die("Sva polja su obavezna!🙂");
     }
 
     // Provera da li se gadjaju passowrd i pasword confirm poklapaju
     if($password !== $password_confirm) {
-        die("Lozinke se ne poklapaju, pokusajte ponovo!");
+        die("Lozinke se ne poklapaju, pokusajte ponovo!🙂");
     }
 
     // Provera da li vec korisnik postoji u bazi podataka
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email OR username = :username");
     $stmt->execute(['email' => $email, 'username' => $username]);
     if($stmt->fetch()) {
-        die("Korisnik sa tim emailom vec postoji u nasoj bazi podataka!");
+        die("Korisnik sa tim emailom vec postoji u nasoj bazi podataka!🙂");
     }
 
     // Heshiranje lozinke
