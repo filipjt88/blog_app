@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     }
     $stmt = $pdo->prepare("INSERT INTO posts (title, content, user_id) VALUES (:title, :content, :user_id)");
     $stmt->execute(['title' => $title, 'content' => $content, 'user_id' => $user_id]);
-    header("Location: index.php");
+    header("Location: views/index.view.php");
     exit;
 } else {
     header("Location: create_blog_post.php");

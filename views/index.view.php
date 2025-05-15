@@ -1,5 +1,4 @@
-<?php include './parts/top.php'; ?>
-<?php $title = 'Home page'; ?>
+<?php include '../parts/top.php'; ?>
 <div class="container mt-5">
     <h2 class="text-center">Svi postovi</h2>
     <section class="d-flex justify-content-between">
@@ -14,7 +13,6 @@
 
     <?php if (isset($posts) && count($posts) > 0): ?>
         <?php foreach ($posts as $post): ?>
-            <?php var_dump(count($posts)); ?>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-3">
@@ -46,4 +44,4 @@
                 </div>
             </div>
 </div>
-<?php include './parts/bottom.php'; ?>
+<?php include '../parts/bottom.php'; ?>
