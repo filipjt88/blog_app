@@ -1,6 +1,7 @@
 <?php 
 session_start();
-include_once 'core/db.php'; ?>
+include_once 'core/db.php'; 
+?>
 
 <?php
 if(!isset($_SESSION['user_id'])) {
