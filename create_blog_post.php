@@ -1,13 +1,13 @@
 <?php
 $title = "Blog post";
+include 'parts/top.php'; 
 session_start();
 // Provera da li je user logovan
 if(!isset($_SESSION['user_id'])) {
     header("Location: views/login.view.php");
     exit;
 }
-
-include 'parts/top.php'; ?>
+?>
 
     <div class="container mt-5">
         <h2 class="text-center">Novi blog post</h2>

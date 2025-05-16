@@ -1,7 +1,6 @@
 <?php 
 $title = 'Home page';
-include '../parts/top.php'; ?>
- <?php
+include '../parts/top.php';
 session_start();
 if(!isset($_SESSION['user_id'])) {
     header("Location:login.view.php");
