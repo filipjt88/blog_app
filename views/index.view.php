@@ -1,10 +1,17 @@
 <?php include '../parts/top.php'; ?>
+ <?php
+session_start();
+if(!isset($_SESSION['user_id'])) {
+    header("Location:login.view.php");
+    exit;
+}
+?>
 <div class="container mt-5">
     <h2 class="text-center">Svi postovi</h2>
     <section class="d-flex justify-content-between">
         <?php if (isset($_SESSION['username'])): ?>
             <span class="me-2">User: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></span>
-            <a href="./logout.php" class="btn btn-sm btn-outline-danger">Logout</a>
+            <a href="../logout.php" class="btn btn-sm btn-outline-danger">Logout</a>
         <?php else: ?>
             <a href="../create_blog_post.php" class="btn btn-success"> + Kreiraj novi post</a>
             <a href="../views/login.view.php" class="btn btn-sm btn-outline-primary">Login</a>
