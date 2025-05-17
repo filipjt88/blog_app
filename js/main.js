@@ -12,7 +12,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
     const error = document.getElementById('error');
 
     let errorMsg = '';
-
+// Validacija i provera unosa da li su polja za unos prazna
     if(!username || !email || !password || !password_confirm) {
         errorMsg = 'Sva polja su obavezna!';
     } else if(password.length < 6) {
