@@ -22,9 +22,8 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         header("Location: ./views/index.view.php");
         exit;
     }
-
+    
     $stmt = $pdo->prepare("UPDATE posts SET title = :title, content = :content WHERE id = :id");
     $stmt->execute(['title' => $title, 'content' => $content, 'id' => $post_id]);
-
     header("Location: ./views/index.view.php");
 }

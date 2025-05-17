@@ -18,6 +18,4 @@
         <a href="./index.view.php" class="btn btn-secondary">Vrati se nazad</a>
     </form>
 </div>
-
-
 <?php include 'parts/bottom.php'; ?>

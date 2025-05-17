@@ -20,5 +20,4 @@
         </div>
     </div>
 </div>
-
 <?php include '../parts/bottom.php'; ?>

@@ -28,6 +28,4 @@ $delete = $pdo->prepare("DELETE FROM posts WHERE id = ?");
 $delete->execute([$post_id]);
 header("Location: ./views/index.view.php");
 exit;
-
-
 ?>

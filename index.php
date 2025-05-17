@@ -14,6 +14,6 @@ $stmt = $pdo->query("SELECT posts.*, users.username FROM posts LEFT JOIN users O
 $posts = $stmt->fetchAll();
 
 include 'views/index.view.php'; 
- ?>
+?>
 
 

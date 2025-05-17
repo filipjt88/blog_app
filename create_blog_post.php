@@ -28,6 +28,4 @@ if(!isset($_SESSION['user_id'])) {
             <a href="views/index.view.php" class="btn btn-secondary">Vrati se nazad</a>
         </form>
     </div>
-
-
 <?php include 'parts/bottom.php'; ?>
