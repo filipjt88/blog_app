@@ -3,3 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --light: #fff;
+    --dark: #000;
+    --blue: #0a0af3;
+    --green: #008000;
+}
