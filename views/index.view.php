@@ -1,8 +1,6 @@
 <?php
-
 $title = 'Home page';
-include '../parts/top.php';
-session_start();
+include './parts/top.php';
 
 ?>
 
@@ -20,38 +18,30 @@ session_start();
     </section>
 
 
-    <?php if (isset($posts) && count($post) > 0): ?>
-        <?php foreach ($posts as $post): ?>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h4><?= htmlspecialchars($post['title']) ?></h4>
-                            <?php echo "FILIP"; ?>
-                            <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
-                            <small class="text-muted">
-                                Autor: <?= htmlspecialchars($post['username']) ?> |
-                                Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
-                            </small>
-                            <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['user_id']): ?>
-                                <div class="mt-2">
-                                    <a href="../edit_post.php?= $post['id'] ?>" class="btn btn-sm btn-warning">Izmeni</a>
-                                    <a href="./delete_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Da li sigurno želiš da obrišeš post?');">Obriši</a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                        <div class="row">
-                            <div class="col-md-6 offset-5">
-                                <h4>Nema postova za prikaz.</h4>
-                            </div>
-                        </div>
-                <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-</div>
+  <?php if (isset($posts) && count($posts) > 0): ?>
+    <?php foreach ($posts as $post): ?>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4><?= htmlspecialchars($post['title']) ?></h4>
+                <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
+                <small class="text-muted">
+                    Autor: <?= htmlspecialchars($post['username']) ?> |
+                    Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
+                </small>
 
-<?php include '../parts/bottom.php'; ?>
+                <!-- Provera da li je korisnik autor posta -->
+                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['user_id']): ?>
+                    <div class="mt-2">
+                        <a href="edit.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-warning">Izmeni</a>
+                        <a href="../delete_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Da li sigurno želiš da obrišeš post?');">Obriši</a>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p>Nema postova za prikaz.</p>
+<?php endif; ?>
+
+
+<?php include './parts/bottom.php'; ?>
