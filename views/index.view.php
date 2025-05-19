@@ -1,12 +1,12 @@
 <?php
+
 $title = 'Home page';
 include '../parts/top.php';
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location:login.view.php");
-    exit;
-}
+
 ?>
+
+
 <div class="container mt-5">
     <h2 class="text-center">Svi postovi</h2>
     <section class="d-flex justify-content-between">
@@ -19,13 +19,15 @@ if (!isset($_SESSION['user_id'])) {
         <?php endif; ?>
     </section>
 
-    <?php if (isset($posts) && count($posts) > 0): ?>
+
+    <?php if (isset($posts) && count($post) > 0): ?>
         <?php foreach ($posts as $post): ?>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-3">
                         <div class="card-body">
                             <h4><?= htmlspecialchars($post['title']) ?></h4>
+                            <?php echo "FILIP"; ?>
                             <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
                             <small class="text-muted">
                                 Autor: <?= htmlspecialchars($post['username']) ?> |
@@ -38,18 +40,18 @@ if (!isset($_SESSION['user_id'])) {
                                 </div>
                             <?php endif; ?>
                         </div>
+                        </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <section>
                         <div class="row">
                             <div class="col-md-6 offset-5">
                                 <h4>Nema postova za prikaz.</h4>
                             </div>
                         </div>
-                    </section>
                 <?php endif; ?>
                     </div>
                 </div>
             </div>
 </div>
+
 <?php include '../parts/bottom.php'; ?>
