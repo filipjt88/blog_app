@@ -1,10 +1,10 @@
 <?php
 $title = 'Home page';
-include '../parts/top.php';
+require_once __DIR__ . '/../parts/top.php';
 
 ?>
 
-<div class="container mt-5">
+   <div class="container mt-5">
     <h2 class="text-center">Svi postovi</h2>
     <section class="d-flex justify-content-between">
         <?php if (isset($_SESSION['username'])): ?>
@@ -41,6 +41,5 @@ include '../parts/top.php';
     <?php else: ?>
         <h4 class="text-center">Nema postova!</h4>
     <?php endif; ?>
-
 
     <?php include '../parts/bottom.php'; ?>
