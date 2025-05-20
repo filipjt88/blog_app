@@ -7,8 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     $password = trim($_POST['password']);
 // Provera email i passworda koja ne smeju biti prazna za unos
     if(empty($email) || empty($password)) {
-        header("Location: login.php?error=" . urlencode("Sva polja su obavezna"));
-        exit;
+        die("<h3>Sva polja su obavezna!🙂</h3>" . "</br>" . "<a href='views/login.view.php'>Vrati se nazad</a>");
     }
 
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");

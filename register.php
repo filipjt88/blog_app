@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Provera da li su sva polja popunjena
     if(empty($username) || empty($email) || empty($password) || empty($password_confirm)) {
-        die("Sva polja su obavezna!🙂");
+        die("<h3>Sva polja su obavezna!🙂</h3>" . "</br><a href='views/register.view.php'>Vrati se nazad</a>");
     }
 
     // Provera da li se gadjaju passowrd i pasword confirm poklapaju
