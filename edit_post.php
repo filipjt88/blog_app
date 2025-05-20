@@ -22,4 +22,6 @@ if(!$post || $post['user_id'] != $_SESSION['user_id']) {
     exit;
 }
 
+include 'views/edit_post.view.php';
+
 ?>

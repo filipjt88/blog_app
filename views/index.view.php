@@ -30,7 +30,7 @@ require_once __DIR__ . '/../parts/top.php';
                     <!-- Provera da li je korisnik autor posta -->
                     <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['user_id']): ?>
                         <div class="mt-2">
-                            <a href="edit.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-warning">Izmeni</a>
+                            <a href="./edit_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-warning">Izmeni</a>
                             <a href="./delete_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Da li sigurno želiš da obrišeš post?');">Obriši</a>
                         </div>
                     <?php endif; ?>
