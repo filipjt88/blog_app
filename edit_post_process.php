@@ -19,11 +19,11 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     $post = $stmt->fetch();
 
     if(!$post) {
-        header("Location: ./views/index.view.php");
+        header("Location: index.php");
         exit;
     }
     
     $stmt = $pdo->prepare("UPDATE posts SET title = :title, content = :content WHERE id = :id");
     $stmt->execute(['title' => $title, 'content' => $content, 'id' => $post_id]);
-    header("Location: ./views/index.view.php");
+    header("Location: index.php");
 }

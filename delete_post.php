@@ -19,13 +19,13 @@ $stmt->execute([$post_id]);
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if(!$post || $post['user_id'] != $_SESSION['user_id)']) {
-    header("Location: ./views/index.view.php");
+    header("Location: index.php");
     exit;
 }
 
 // Obrisi Post
 $delete = $pdo->prepare("DELETE FROM posts WHERE id = ?");
 $delete->execute([$post_id]);
-header("Location: ./views/index.view.php");
+header("Location: index.php");
 exit;
 ?>

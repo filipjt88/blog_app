@@ -18,7 +18,7 @@ $post = $stmt->fetch();
 
 // Proveri da li postoji user i da li je vlasnik
 if(!$post || $post['user_id'] != $_SESSION['user_id']) {
-    header("Location: views/index.view.php");
+    header("Location: index.php");
     exit;
 }
 
