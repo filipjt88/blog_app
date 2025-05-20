@@ -14,21 +14,21 @@ ________________________________________________________________________________
 ________________________________________________________________________________
 
 *** 👥 Korisnici -(users)
-- Registracija i logovanje korisnika
-- Pregled objavljenih blog postova
+- Registracija i logovanje korisnika ✅
+- Pregled objavljenih blog postova ✅
 - Dodavanje komentara na postove
 
 ________________________________________________________________________________
 
 *** 🛠️ Admin panel
-- Kreiranje, izmena i brisanje postova
+- Kreiranje, izmena i brisanje postova ✅
 - Upravljanje komentarima (opciono)
 
 ________________________________________________________________________________
 
 
 *** 📄 Postovi (posts)
-- Naslov, kratak opis i glavni sadržaj
-- Automatski datum objave
+- Naslov, kratak opis i glavni sadržaj ✅
+- Automatski datum objave ✅
 - Kategorije ili tagovi (opciono)
 
