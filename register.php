@@ -15,14 +15,14 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Provera da li se gadjaju passowrd i pasword confirm poklapaju
     if($password !== $password_confirm) {
-        die("Lozinke se ne poklapaju, pokusajte ponovo!🙂");
+        die("<h3>Lozinke se ne poklapaju, pokusajte ponovo!🙂</h3>" . "</br>" . "<a href='views/register.view.php'>Vrati se nazad</a>");
     }
 
     // Provera da li vec korisnik postoji u bazi podataka
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email OR username = :username");
     $stmt->execute(['email' => $email, 'username' => $username]);
     if($stmt->fetch()) {
-        die("Korisnik sa tim emailom vec postoji u nasoj bazi podataka!🙂");
+        die("<h3>Korisnik sa tim emailom vec postoji u nasoj bazi podataka!🙂</h3>" . "</br><a href='views/register.view.php'>Vrati se nazad</a>");
     }
 
     // Heshiranje lozinke
