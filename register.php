@@ -35,6 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         'email'    => $email,
         'password' => $hashPassword
     ]);
+
     // Preusmeravanje na drugu stranicu
     header("Location: index.php");
     exit;

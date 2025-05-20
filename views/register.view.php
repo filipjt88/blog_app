@@ -1,5 +1,7 @@
 <?php $title = 'Register'; ?>
 <?php include '../parts/top.php'; ?>
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-2 mt-5">
@@ -15,4 +17,5 @@
         </div>
     </div>
 </div>
+
 <?php include '../parts/bottom.php'; ?>

@@ -1,4 +1,6 @@
 <?php include 'parts/top.php'; ?>
+
+
 <div class="container mt-5">
     <h2 class="text-center">Izmena posta</h2>
     <?php if(isset($_GET['error'])): ?>
@@ -18,4 +20,5 @@
         <a href="./index.view.php" class="btn btn-secondary">Vrati se nazad</a>
     </form>
 </div>
+
 <?php include 'parts/bottom.php'; ?>

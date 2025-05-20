@@ -1,10 +1,9 @@
 <?php if (!isset($posts)) die('Nema direktnog pristupa.');
 $title = 'Home page';
 require_once __DIR__ . '/../parts/top.php';
-
 ?>
 
-   <div class="container mt-5">
+<div class="container mt-5">
     <h2 class="text-center">Svi postovi</h2>
     <section class="d-flex justify-content-between">
         <?php if (isset($_SESSION['username'])): ?>
@@ -27,7 +26,7 @@ require_once __DIR__ . '/../parts/top.php';
                         Autor: <?= htmlspecialchars($post['username']) ?> |
                         Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
                     </small>
-                <?php count($posts); ?>
+                    <?php count($posts); ?>
                     <!-- Provera da li je korisnik autor posta -->
                     <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['user_id']): ?>
                         <div class="mt-2">
