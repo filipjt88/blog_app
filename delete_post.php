@@ -18,7 +18,7 @@ $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = ?");
 $stmt->execute([$post_id]);
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if(!$post || $post['user_id'] != $_SESSION['user_id)']) {
+if(!$post || $post['user_id'] != $_SESSION['user_id']) {
     header("Location: index.php");
     exit;
 }
