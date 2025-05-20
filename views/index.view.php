@@ -1,4 +1,4 @@
-<?php
+<?php if (!isset($posts)) die('Nema direktnog pristupa.');
 $title = 'Home page';
 require_once __DIR__ . '/../parts/top.php';
 
@@ -27,7 +27,7 @@ require_once __DIR__ . '/../parts/top.php';
                         Autor: <?= htmlspecialchars($post['username']) ?> |
                         Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
                     </small>
-
+                <?php count($posts); ?>
                     <!-- Provera da li je korisnik autor posta -->
                     <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['user_id']): ?>
                         <div class="mt-2">
@@ -42,4 +42,4 @@ require_once __DIR__ . '/../parts/top.php';
         <h4 class="text-center">Nema postova!</h4>
     <?php endif; ?>
 
-    <?php include '../parts/bottom.php'; ?>
+    <?php include './parts/bottom.php'; ?>

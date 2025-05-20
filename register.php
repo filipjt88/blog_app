@@ -35,9 +35,8 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         'email'    => $email,
         'password' => $hashPassword
     ]);
-
     // Preusmeravanje na drugu stranicu
-    header("Location: login.php?registered=1");
+    header("Location: index.php");
     exit;
 } else {
     die("Ovo je nevazeci zahtev!");

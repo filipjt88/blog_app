@@ -26,6 +26,6 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     $_SESSION['role'] = $user['role'];
 
     // Preusmerenje usera na pocetnu stranicu
-    header("Location: views/index.view.php");
+    header("Location: index.php");
 }
 ?>
