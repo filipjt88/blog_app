@@ -16,21 +16,26 @@ body{
     background: rgba(33, 15, 15, 0.18);
 }
 
-#loginForm {
+#loginForm,#registerForm {
     margin-top: 100px;
 }
 
-.nav-link-form {
+.nav-link-form{
     text-align: center;
     margin-top: 10px;
 }
+
 
 label {
     padding: 10px;
 }
 
-#loginForm input {
-    border-radius:10px 2px;
+input {
+    border-radius:10px 4px;
     border: 1px solid var(--dark);
     outline: 2px solid #333;
+}
+
+input::placeholder {
+    font-style: italic;
 }

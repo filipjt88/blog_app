@@ -7,9 +7,9 @@
             <form id="loginForm" action="../login.php" method="POST">
             <h1 class="text-center">Prijava</h1>
                 <label for="email">Email:</label>
-                <input type="email" name="email" class="form-control" placeholder="Please enter email"><br>
+                <input type="email" name="email" class="form-control" placeholder="Please enter email..."><br>
                 <label for="email">Password:</label>
-                <input type="password" name="password" class="form-control" placeholder="Please enter the password"><br>
+                <input type="password" name="password" class="form-control" placeholder="Please enter the password..."><br>
                 <button type="submit" class="form-control btn btn-success">Login</button>
             </form>
             <a class="nav-link nav-link-form" href="register.view.php">Nemate nalog? Registrujte se!</a>
