@@ -21,6 +21,15 @@ if (!isset($_SESSION['user_id'])) {
             <input type="text" name="title" id="title" class="form-control">
         </div>
         <div class="mb-3">
+            <label for="title" class="form-label">Kategorija</label>
+            <select class="form-select" name="categories" aria-label="Default select example">
+                <?php foreach($categories as $category): ?>
+            <option selected>Open this select menu</option>
+            <option value="<?php $_POST['category']; ?>">One</option>
+            <?php endforeach; ?>
+</select>
+        </div>
+        <div class="mb-3">
             <label for="content" class="form-label">Sadrzaj</label>
             <textarea name="content" id="content" rows="6" class="form-control"></textarea>
         </div>
