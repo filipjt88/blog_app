@@ -4,7 +4,7 @@ require_once __DIR__ . '/../parts/top.php';
 ?>
 
 <div class="container mt-5">
-    <h2 class="text-center">Svi postovi</h2>
+    <h2 class="text-center">Blog postovi</h2>
     <section class="d-flex justify-content-between mt-5">
         <?php if (isset($_SESSION['username'])): ?>
             <span class="me-2">Korisnik👨: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></span>
