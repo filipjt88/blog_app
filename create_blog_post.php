@@ -21,13 +21,12 @@ if (!isset($_SESSION['user_id'])) {
             <input type="text" name="title" id="title" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="title" class="form-label">Kategorija</label>
-            <select class="form-select" name="categories" aria-label="Default select example">
-                <?php foreach($categories as $cat): ?>
-            <option selected>Open this select menu</option>
-            <option value="<?php $_POST['cat']; ?>">One</option>
-            <?php endforeach; ?>
-</select>
+            <label for="title" class="form-label">Izaberi kategoriju:</label>
+            <select class="form-select" name="category_id" aria-label="Default select example" required>
+                <?php foreach ($categories as $cat): ?>
+                    <option value="<?= $cat['id'] ?>"><?= htmlspecialchars($cat['name']) ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Sadrzaj</label>

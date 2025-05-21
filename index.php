@@ -7,6 +7,10 @@ if(!isset($_SESSION['user_id'])) {
     exit;
 }
 
+
+$stmt = $pdo->query("SELECT * FROM categories");
+$categories = $stmt->fetchAll();
+
 // Preuzimanje svih postova iz baze podataka
 $stmt = $pdo->query("
     SELECT posts.*, users.username, categories.name AS category_name 
