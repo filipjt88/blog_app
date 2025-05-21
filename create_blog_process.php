@@ -2,10 +2,13 @@
 session_start();
 require_once 'core/db.php';
 
+
+
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     $title = trim($_POST['title']);
     $content = trim($_POST['content']);
     $user_id = $_SESSION['user_id'];
+    
 
     if(empty($title) || empty($content)) {
         header('Location: create_blog_post.php?error=' .urlencode("Sva polja su obavezna!"));
@@ -18,4 +21,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 } else {
     header("Location: create_blog_post.php");
 }
+
+
+
 ?>

@@ -23,9 +23,9 @@ if (!isset($_SESSION['user_id'])) {
         <div class="mb-3">
             <label for="title" class="form-label">Kategorija</label>
             <select class="form-select" name="categories" aria-label="Default select example">
-                <?php foreach($categories as $category): ?>
+                <?php foreach($categories as $cat): ?>
             <option selected>Open this select menu</option>
-            <option value="<?php $_POST['category']; ?>">One</option>
+            <option value="<?php $_POST['cat']; ?>">One</option>
             <?php endforeach; ?>
 </select>
         </div>

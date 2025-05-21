@@ -23,6 +23,7 @@ require_once __DIR__ . '/../parts/top.php';
                     <h4><?= htmlspecialchars($post['title']) ?></h4>
                     <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
                     <small class="text-muted">
+                         Kategorija: <?= htmlspecialchars($post['category_name'] ?? 'Nedefinisano') ?> |
                         Autor: <?= htmlspecialchars($post['username']) ?> |
                         Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
                     </small>
