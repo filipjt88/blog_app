@@ -22,6 +22,7 @@ $stmt = $pdo->query("
 $posts = $stmt->fetchAll();
 
 
+
 include 'views/index.view.php'; 
 ?>
 
