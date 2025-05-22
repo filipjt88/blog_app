@@ -1,6 +1,6 @@
 <?php
 $title = "Blog post";
-include 'parts/top.php';
+require_once __DIR__ . '/./parts/top.php';
 session_start();
 // Provera da li je user logovan
 if (!isset($_SESSION['user_id'])) {
@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id'])) {
         <div class="alert alert-danger"><?= htmlspecialchars($_GET['error']) ?></div>
     <?php endif; ?>
 
-    <form action="create_blog_process.php" method="POST">
+    <form id="blogForm" action="create_blog_process.php" method="POST">
         <div class="mb-3">
             <label for="title" class="form-label">Naslov</label>
             <input type="text" name="title" id="title" class="form-control">

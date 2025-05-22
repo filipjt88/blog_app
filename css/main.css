@@ -36,6 +36,10 @@ input {
     outline: 2px solid #333;
 }
 
+#blogForm {
+    background-color: red;
+}
+
 input::placeholder {
     font-style: italic;
 }
