@@ -1,5 +1,6 @@
 <?php
 $title = "Blog post";
+include_once 'core/db.php';
 require_once __DIR__ . '/./parts/top.php';
 session_start();
 // Provera da li je user logovan
@@ -7,6 +8,11 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: views/login.view.php");
     exit;
 }
+
+$stmt = $pdo->query("SELECT * FROM categories");
+$categories = $stmt->fetchAll();
+
+
 ?>
 
 <div class="container mt-5">
