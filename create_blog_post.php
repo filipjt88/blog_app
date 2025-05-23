@@ -21,7 +21,7 @@ $categories = $stmt->fetchAll();
         <div class="alert alert-danger"><?= htmlspecialchars($_GET['error']) ?></div>
     <?php endif; ?>
 
-    <form id="blogForm" action="create_blog_process.php" method="POST">
+    <form id="blogForm" action="create_blog_process.php" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">Naslov</label>
             <input type="text" name="title" id="title" class="form-control">
@@ -36,7 +36,7 @@ $categories = $stmt->fetchAll();
         </div>
         <div class="mb-3">
             <label for="img" class="form-label">Slika</label>
-            <input type="file" name="name" id="img" class="form-control">
+            <input type="file" name="image" class="form-control">
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Sadrzaj</label>
