@@ -4,7 +4,9 @@ require_once __DIR__ . '/../parts/top.php';
 ?>
 
 <div class="container mt-5">
-    <h2 class="text-center">Blog postovi</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Blog postovi</h2>
     <section class="d-flex justify-content-between mt-5">
         <?php if (isset($_SESSION['username'])): ?>
             <span class="me-2">Korisnik👨: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></span>
@@ -27,7 +29,7 @@ require_once __DIR__ . '/../parts/top.php';
                         Autor: <?= htmlspecialchars($post['username']) ?> |
                         Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
                         <?php if (!empty($post['image'])): ?>
-                            <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="img-fluid img-thumbnail">
+                            <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="img-fluid img-thumbnail" style="width: 100%;">
                         <?php endif; ?>
                     </small>
                     <?php count($posts); ?>
@@ -39,6 +41,8 @@ require_once __DIR__ . '/../parts/top.php';
                         </div>
                     <?php endif; ?>
                 </div>
+            </div>
+        </div>
             </div>
         <?php endforeach; ?>
     <?php else: ?>

@@ -43,3 +43,8 @@ input {
 input::placeholder {
     font-style: italic;
 }
+
+.card-body img {
+    width: 100%;
+    object-fit: cover;
+}
