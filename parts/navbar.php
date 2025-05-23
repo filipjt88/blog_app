@@ -9,9 +9,6 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Pocetna strancia</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Kategorije
@@ -21,7 +18,17 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
+          <a class="nav-link" href="#">Kreiraj novi post</a>
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Podesavanja
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="#">Registracija</a></li>
+            <li><a class="dropdown-item" href="#">Prijava</a></li>
+            <li><a class="dropdown-item" href="#">Odjava</a></li>
+          </ul>
         </li>
       </ul>
       <form class="d-flex">
