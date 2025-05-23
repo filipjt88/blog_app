@@ -36,7 +36,7 @@ $categories = $stmt->fetchAll();
         </div>
         <div class="mb-3">
             <label for="img" class="form-label">Slika</label>
-            <input type="file" name="image" id="img" class="form-control">
+            <input type="file" name="name" id="img" class="form-control">
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Sadrzaj</label>

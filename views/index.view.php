@@ -23,9 +23,12 @@ require_once __DIR__ . '/../parts/top.php';
                     <h4><?= htmlspecialchars($post['title']) ?></h4>
                     <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
                     <small class="text-muted">
-                         Kategorija: <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
+                        Kategorija: <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
                         Autor: <?= htmlspecialchars($post['username']) ?> |
                         Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
+                        <?php if (!empty($post['image'])): ?>
+                            <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" style="max-width: 100%; height: auto; margin-bottom: 15px;">
+                        <?php endif; ?>
                     </small>
                     <?php count($posts); ?>
                     <!-- Provera da li je korisnik autor posta -->

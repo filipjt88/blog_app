@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         header('Location: create_blog_post.php?error=' . urlencode("Sva polja su obavezna!"));
         exit;
     }
-    $stmt = $pdo->prepare("INSERT INTO posts (title, content, user_id, created_at, category_id, image) VALUES (?, ?, ?, NOW()), ?, ?");
+    $stmt = $pdo->prepare("INSERT INTO posts (title, content, user_id, created_at, category_id, image) VALUES (?, ?, ?, NOW(), ?, ?)");
     $stmt->execute([$title, $content, $user_id, $category_id, $image_path]);
     header("Location: index.php");
     exit;
