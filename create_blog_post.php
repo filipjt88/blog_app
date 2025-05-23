@@ -35,6 +35,10 @@ $categories = $stmt->fetchAll();
             </select>
         </div>
         <div class="mb-3">
+            <label for="img" class="form-label">Slika</label>
+            <input type="file" name="image" id="img" class="form-control">
+        </div>
+        <div class="mb-3">
             <label for="content" class="form-label">Sadrzaj</label>
             <textarea name="content" id="content" rows="6" class="form-control"></textarea>
         </div>
