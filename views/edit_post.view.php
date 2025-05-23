@@ -10,7 +10,7 @@
         <input type="hidden" name="id" value="<?= $post['id'] ?>">
         <div class="mb-3">
             <label for="title" class="form-label">Naslov</label>
-            <input type="text" name="title" id="title" value="<?= htmlspecialchars($post['title']) ?>">
+            <input type="text" class="form-control" name="title" id="title" value="<?= htmlspecialchars($post['title']) ?>">
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Sadrzaj</label>
