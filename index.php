@@ -18,9 +18,6 @@ $stmt = $pdo->query("
 $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-var_dump($posts['username']);
-
-
 include 'views/index.view.php'; 
 ?>
 

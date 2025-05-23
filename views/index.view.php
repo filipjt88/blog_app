@@ -18,7 +18,6 @@ require_once __DIR__ . '/../parts/top.php';
 
     <?php if (isset($posts) && count($posts) > 0): ?>
         <?php foreach ($posts as $post): ?>
-            <?php var_dump($post); ?>
             <div class="card mb-3">
                 <div class="card-body">
                     <h4><?= htmlspecialchars($post['title']) ?></h4>
