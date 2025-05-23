@@ -15,9 +15,10 @@ $stmt = $pdo->query("
     LEFT JOIN categories ON posts.category_id = categories.id
     ORDER BY posts.created_at DESC
 ");
-$posts = $stmt->fetchAll();
+$posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-var_dump($posts['category_name']);
+
+var_dump($posts['username']);
 
 
 include 'views/index.view.php'; 
