@@ -1,5 +1,4 @@
 <?php
-if (!isset($posts)) die('Nema direktnog pristupa.');
 include './core/db.php';
 require_once __DIR__ . '/../parts/top.php';
 $stmt = $pdo->query("SELECT * FROM categories");

@@ -25,8 +25,8 @@ require_once __DIR__ . '/../parts/top.php';
 
                             <small class="text-muted mb-3 d-block">
                                 Kategorija: <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
-                                Autor: <?= htmlspecialchars($post['username']) ?> |
-                                Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
+                                Autor: <?= htmlspecialchars($post['username']) ?> </br>
+                                Datum: <strong><?= date('d.m.Y H:i', strtotime($post['created_at'])) ?></strong>
                             </small>
 
                             <a href="single_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-primary mt-auto">Pročitaj više</a>
@@ -42,10 +42,10 @@ require_once __DIR__ . '/../parts/top.php';
                 </div>
             <?php endforeach; ?>
         </div>
-    </div>
-    <?php else: ?>
-        <h4 class="text-center mt-5">Nema postova!</h4>
-    <?php endif; ?>
+</div>
+<?php else: ?>
+    <h4 class="text-center mt-5">Nema postova!</h4>
+<?php endif; ?>
 
 
 <?php include './parts/bottom.php'; ?>
