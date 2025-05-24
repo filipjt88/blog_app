@@ -20,7 +20,7 @@ require_once __DIR__ . '/../parts/top.php';
                                 Autor: <?= htmlspecialchars($post['username']) ?> |
                                 Datum: <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
                                 <?php if (!empty($post['image'])): ?>
-                                    <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="img-fluid" style="min-height:300px;object-fit:cover;">
+                                    <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="img-fluid" style="min-height:200px;object-fit:cover;">
                             </small>
                                 <?php endif; ?>
                             <?php count($posts); ?>
