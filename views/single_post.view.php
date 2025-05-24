@@ -21,7 +21,7 @@ require_once __DIR__ . '/../parts/top.php';
             <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
         </div>
     </div>
-    <a href="index.php" class="btn btn-outline-secondary mt-5 mb-5">← Nazad na sve postove</a>
+    <a href="index.php" class="btn btn-outline-dark mt-5 mb-5">← Nazad na sve postove</a>
 </div>
 
 <?php require_once __DIR__ . '/../parts/bottom.php';  ?>

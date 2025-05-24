@@ -26,10 +26,10 @@ require_once __DIR__ . '/../parts/top.php';
                             <small class="text-muted mb-3 d-block">
                                 Kategorija: <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
                                 Autor: <?= htmlspecialchars($post['username']) ?> </br>
-                                Datum: <strong><?= date('d.m.Y H:i', strtotime($post['created_at'])) ?></strong>
+                                Datum objave: <strong><?= date('d.m.Y H:i', strtotime($post['created_at'])) ?></strong>
                             </small>
 
-                            <a href="single_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-primary mt-auto">Pročitaj više</a>
+                            <a href="single_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-outline-dark mt-auto">Pročitaj više</a>
 
                             <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['user_id']): ?>
                                 <div class="pt-3 d-flex justify-content-between">
