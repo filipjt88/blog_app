@@ -10,7 +10,7 @@ require_once __DIR__ . '/../parts/top.php';
     <?php if (isset($posts) && count($posts) > 0): ?>
         <div class="row">
             <?php foreach ($posts as $post): ?>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-5">
                     <div class="card mb-5 h-100">
                         <?php if (!empty($post['image'])): ?>
                             <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="card-img-top" style="height: 200px; object-fit: cover;">
