@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email OR username = :username");
     $stmt->execute(['email' => $email, 'username' => $username]);
     if($stmt->fetch()) {
-        die("<h3>Korisnik sa tim emailom vec postoji u nasoj bazi podataka!🙂</h3>" . "</br><a href='views/register.view.php'>Vrati se nazad</a>");
+        die("<h3>Korisnik sa tim emailom vec postoji u nasoj bazi podataka!🙂</h3>" . "</br> <a href='views/register.view.php' class='btn btn-success'>Vrati se nazad</a>");
     }
 
     // Heshiranje lozinke
