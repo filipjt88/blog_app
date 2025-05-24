@@ -2,6 +2,8 @@
 if (!isset($posts)) die('Nema direktnog pristupa.');
 include './core/db.php';
 require_once __DIR__ . '/../parts/top.php';
+$stmt = $pdo->query("SELECT * FROM categories");
+$categories = $stmt->fetchAll();
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -11,7 +13,7 @@ require_once __DIR__ . '/../parts/top.php';
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Pocetna strancia</a>
         </li>
@@ -21,7 +23,7 @@ require_once __DIR__ . '/../parts/top.php';
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
             <?php foreach($categories as $cat): ?>
-            <li><a class="dropdown-item" href="#"><?= htmlspecialchars($post['category_name']) ?></a></li>
+            <li><a class="dropdown-item" href="#"><?= htmlspecialchars($cat['name']) ?></a></li>
             <?php endforeach; ?>
           </ul>
         </li>
@@ -41,10 +43,6 @@ require_once __DIR__ . '/../parts/top.php';
         </li>
         <?php endif; ?>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
