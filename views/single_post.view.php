@@ -5,7 +5,9 @@ require_once __DIR__ . '/../parts/top.php';
 
 <div class="container mt-5">
     <?php include './parts/navbar.php'; ?>
-    <div class="card shadow-sm mt-5">
+    <div class="row">
+        <div class="col-md-9 offset-2">
+            <div class="card shadow-sm mt-5">
         <?php if (!empty($post['image'])): ?>
             <img src="<?= htmlspecialchars($post['image']) ?>" class="card-img-top" alt="Slika posta" style="max-height: 800px; object-fit: cover;">
         <?php endif; ?>
@@ -21,7 +23,11 @@ require_once __DIR__ . '/../parts/top.php';
             <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
         </div>
     </div>
-    <a href="index.php" class="btn btn-outline-dark mt-5 mb-5">← Nazad na sve postove</a>
+     <a href="index.php" class="btn btn-outline-dark mt-5 mb-5">← Nazad na sve postove</a>
+        </div>
+         
+    </div>
+  
 </div>
 
 <?php require_once __DIR__ . '/../parts/bottom.php';  ?>
