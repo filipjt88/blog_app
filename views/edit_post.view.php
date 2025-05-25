@@ -1,6 +1,6 @@
 <?php 
 $title = 'Edit post';
-include 'parts/top.php'; ?>
+require_once __DIR__ . '/../parts/top.php'; ?>
 
 
 <div class="container mt-5">
@@ -30,4 +30,4 @@ include 'parts/top.php'; ?>
     </div>
 </div>
 
-<?php include 'parts/bottom.php'; ?>
+<?php require_once __DIR__ . '/../parts/bottom.php'; ?>

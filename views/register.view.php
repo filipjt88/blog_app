@@ -1,5 +1,5 @@
 <?php $title = 'Register'; ?>
-<?php include '../parts/top.php'; ?>
+<?php require_once __DIR__ . '/../parts/top.php'; ?>
 
 
 <div class="container">
@@ -22,4 +22,4 @@
     </div>
 </div>
 
-<?php include '../parts/bottom.php'; ?>
+<?php require_once __DIR__ . '/../parts/bottom.php'; ?>

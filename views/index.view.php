@@ -48,4 +48,4 @@ require_once __DIR__ . '/../parts/top.php';
 <?php endif; ?>
 
 
-<?php include './parts/bottom.php'; ?>
+<?php require_once __DIR__ . '/../parts/bottom.php'; ?>
