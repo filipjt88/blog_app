@@ -26,7 +26,6 @@ require_once __DIR__ . '/../parts/top.php';
      <a href="index.php" class="btn btn-outline-dark mt-5 mb-5">← Nazad na sve postove</a>
         </div>
     </div>
-  
 </div>
 
 <?php require_once __DIR__ . '/../parts/bottom.php';  ?>

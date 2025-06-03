@@ -2,7 +2,6 @@
 $title = 'Edit post';
 require_once __DIR__ . '/../parts/top.php'; ?>
 
-
 <div class="container mt-5">
     <h2 class="text-center">Izmena posta</h2>
     <div class="row">
@@ -29,5 +28,4 @@ require_once __DIR__ . '/../parts/top.php'; ?>
         </div>
     </div>
 </div>
-
 <?php require_once __DIR__ . '/../parts/bottom.php'; ?>
