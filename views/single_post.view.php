@@ -14,7 +14,6 @@ require_once __DIR__ . '/../parts/top.php';
 
         <div class="card-body">
             <h1 class="card-title"><?= htmlspecialchars($post['title']) ?></h1>
-
             <div class="mb-2 text-muted">
                 <span><strong>Autor:</strong> <?= htmlspecialchars($post['username']) ?></span> |
                 <span><strong>Kategorija:</strong> <?= htmlspecialchars($post['category_name'] ?? 'Nema') ?></span> |
