@@ -12,8 +12,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $stmt = $pdo->query("SELECT * FROM categories");
 $categories = $stmt->fetchAll();
-
-
 ?>
 
 <div class="container mt-5">
