@@ -27,6 +27,7 @@ require_once __DIR__ . '/../parts/top.php';
     <?php if(isset($_SESSION['user_id'])) : ?>
         <form method='POST' class='mb-4'>
             <textarea name='comment' class='form-control' rows='3' placeholder='Please your comment...'></textarea>
+            <button type='submit' class='btn btn-sm btn-secondary'>Posalji svoj komentar</button>
         </form>
         <?php else: ?>
             <p class='text-center'>Morate biti prijavljeni da biste ostavili svoj komentar!</p>
