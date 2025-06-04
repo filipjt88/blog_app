@@ -20,6 +20,20 @@ if(!$post) {
     exit;
 }
 
+if($_SERVER['REQUEST_METHOD'] === "POST" &&  isset($_POST['comment'])) {
+    $comment   = trim($_POST['comment']);
+    $post_id   = $_GET['id'];
+    $parent_id = $_POST['parent_id'] ?? null;
+    $user_id   = $_SESSION['user_id'];
+
+    if(!empty($comment)) {
+        $stmt = $pdo->prepare("INSERT INTO comments (post_id, user_id, parent_id content) VALUES (?,?,?,?)");
+        $stmt->execute([$post_id, $user_id, $parent_id, $comment]);
+    }
+    header("Location: single_post.php?id=" .$post_id);
+    exit;
+}
+
 include 'views/single_post.view.php';
 
 ?>
