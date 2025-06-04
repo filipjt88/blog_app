@@ -22,6 +22,16 @@ require_once __DIR__ . '/../parts/top.php';
             <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
         </div>
     </div>
+
+    <h4 class="mt-5 text-center">Comments</h4>
+    <?php if(isset($_SESSION['user_id'])) : ?>
+        <form method='POST' class='mb-4'>
+            <textarea name='comment' class='form-control' rows='3' placeholder='Please your comment...'></textarea>
+        </form>
+        <?php else: ?>
+            <p class='text-center'>Morate biti prijavljeni da biste ostavili svoj komentar!</p>
+        <?php endif; ?>
+
      <a href="index.php" class="btn btn-outline-dark mt-5 mb-5">← Nazad na sve postove</a>
         </div>
     </div>

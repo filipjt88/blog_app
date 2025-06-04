@@ -1,6 +1,34 @@
 <?php
+session_start();
 include_once 'core/db.php';
 include_once 'core/init.php';
+
+// Funkcija za prikazivanje komentara
+function showComments($pdo, $post_id, $parent_id = null, $margin = 0) {
+    $stmt->$pdo->prepare("SELECT c.*, u.username FROM comments c JOIN users u ON c.user_id = u.id WHERE c.post_id = ? AND c.parent_id" . ($parent_id ? "=?" : "IS NULL") . " ORDER BY c.created_at ASC");
+    $stmt->execute($parent_id ? [$post_id, $parent_id]: [$post_id]);
+    $comments = $stmt->fetchAll();
+
+    foreach($comments as $comment) {
+        echo "<div class='mb-3' style='margin-left:{$margin}px;'>";
+        echo "<strong>" . htmlspecialchars($comment['username']) ."</strong>:<br>";
+        echo "<p> " . nl2br(htmlspecialchars($comment['content'])) ."</p>";
+        echo "<small class='text-muted'>" . date('d.m.Y H:i', strtotime($comment['created_at'])) ."</small>";
+
+        if(isset($_SESSION['user_id'])) {
+            echo "<form method='POST' class='mt-2'>
+            <input type='hidden' name='parent_id' value='{$komentar['id']}'>
+                    <textarea name='comment' class='form-control mb-2' rows='2' placeholder='Odgovori...'></textarea>
+                    <button type='submit' class='btn btn-sm btn-secondary'>Odgovori</button>
+                  </form>
+            ";
+        }
+        echo "</div>";
+
+        // Prikazivanje odgovora
+        showComments($pdo, $post_id, $comment['id'], $margin + 50);
+    }
+}
 
 if(!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header("Location: index.php");
@@ -33,6 +61,8 @@ if($_SERVER['REQUEST_METHOD'] === "POST" &&  isset($_POST['comment'])) {
     header("Location: single_post.php?id=" .$post_id);
     exit;
 }
+
+showComments($pdo, $post['id']);
 
 include 'views/single_post.view.php';
 
