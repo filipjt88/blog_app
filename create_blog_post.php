@@ -15,7 +15,9 @@ $categories = $stmt->fetchAll();
 ?>
 
 <div class="container mt-5">
-    <h2 class="text-center">Novi blog post</h2>
+    <div class="row">
+        <div class="col-md-6 offset-3">
+        <h2 class="text-center">Novi blog post</h2>
     <?php if (isset($_GET['error'])): ?>
         <div class="alert alert-danger"><?= htmlspecialchars($_GET['error']) ?></div>
     <?php endif; ?>
@@ -44,5 +46,7 @@ $categories = $stmt->fetchAll();
         <button type="submit" class="btn btn-success">Objavi</button>
         <a href="index.php" class="btn btn-secondary">Vrati se nazad</a>
     </form>
+        </div>
+    </div>
 </div>
 <?php include 'parts/bottom.php'; ?>
