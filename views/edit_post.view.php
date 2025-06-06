@@ -16,7 +16,7 @@ require_once __DIR__ . '/../parts/top.php'; ?>
             <input type="text" class="form-control" name="title" id="title" value="<?= htmlspecialchars($post['title']) ?>">
         </div>
         <div class="mb-3">
-            <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="card-img-top" style="height: auto; object-fit: cover;">
+            <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="card-img-top img-thumbnail" style="height: auto; object-fit: cover;">
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Sadrzaj</label>
