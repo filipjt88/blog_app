@@ -5,7 +5,7 @@ require_once __DIR__ . '/../parts/top.php'; ?>
 <div class="container mt-5">
     <h2 class="text-center">Izmena posta</h2>
     <div class="row">
-        <div class="col-md-9 offset-2">
+        <div class="col-md-6 offset-3">
              <?php if(isset($_GET['error'])): ?>
         <div class="alert aler-danger"><?= htmlspecialchars($_GET['error']) ?></div>
     <?php endif; ?>
