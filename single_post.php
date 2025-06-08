@@ -80,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['comment']) && isset($
     if (!empty($comment)) {
         $stmt = $pdo->prepare("INSERT INTO comments (post_id, user_id, parent_id, content) VALUES (?, ?, ?, ?)");
         $stmt->execute([$post_id, $user_id, $parent_id, $comment]);
+
     }
 
     header("Location: single_post.php?id=" . $post_id);
