@@ -16,8 +16,6 @@ $stmt = $pdo->query("
     ORDER BY posts.created_at DESC
 ");
 $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
 include 'views/index.view.php'; 
 ?>
 

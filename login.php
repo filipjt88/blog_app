@@ -2,7 +2,6 @@
 session_start();
 require_once('core/db.php');
 
-
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     $email    = trim($_POST['email']);
     $password = trim($_POST['password']);
@@ -27,5 +26,4 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     // Preusmerenje usera na pocetnu stranicu
     header("Location: index.php");
 }
-
 ?>
