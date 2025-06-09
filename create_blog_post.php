@@ -16,7 +16,7 @@ $categories = $stmt->fetchAll();
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-6 offset-3">
+        <div class="col-md-7 offset-2 mt-5">
         <h2 class="text-center">Novi blog post</h2>
     <?php if (isset($_GET['error'])): ?>
         <div class="alert alert-danger"><?= htmlspecialchars($_GET['error']) ?></div>
@@ -43,8 +43,8 @@ $categories = $stmt->fetchAll();
             <label for="content" class="form-label">Sadrzaj</label>
             <textarea name="content" id="content" rows="6" class="form-control"></textarea>
         </div>
-        <button type="submit" class="btn btn-success">Objavi</button>
         <a href="index.php" class="btn btn-secondary">Vrati se nazad</a>
+        <button type="submit" class="btn btn-success">Objavi</button>
     </form>
         </div>
     </div>
