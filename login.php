@@ -17,7 +17,6 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     if(!$user || !password_verify($password, $user['password'])) {
         die("<h3 class='alert-danger'>Pogresan email ili lozinka😒!</h3>" . "</br>" . "<a href='views/login.view.php'><span class='btn btn-warning'>Vrati se nazad</span></a>");
     }
-
     // Cuvanje podatka usera u sesiji
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
