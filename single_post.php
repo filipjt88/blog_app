@@ -34,6 +34,11 @@ function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
         echo "<p>" . nl2br(htmlspecialchars($comment['content'])) . "</p>";
         echo "<small class='text-muted'>" . date('d.m.Y H:i', strtotime($comment['created_at'])) . "</small>";
 
+         // Dodaj prikaz forme za odgovor (ali ne dozvoli korisniku da odgovara sam sebi)
+        if (isset($_SESSION['user_id']) && $_SESSION['user_id'] != $comment['user_id']) {
+            showAnswer($comment['id']);
+        }
+
         if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $comment['user_id']) {
     echo "<form method='POST' class='d-inline'>
             <input type='hidden' name='edit_comment_id' value='{$comment['id']}'>
@@ -45,14 +50,36 @@ function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
             <button type='submit' class='btn btn-sm btn-outline-danger'>Obriši</button>
           </form>";
 }
-
-
-
         echo "</div>";
 
         // Rekurzivni prikaz odgovora
         showComments($pdo, $post_id, $comment['id'], $margin + 40);
     }
+}
+
+function showAnswer($comment_id) {
+    if (!isset($_SESSION['user_id'])) {
+        return; // Samo ulogovani korisnici mogu da odgovaraju
+    }
+
+    echo "<form method='POST' class='mt-2'>
+            <input type='hidden' name='parent_id' value='" . htmlspecialchars($comment_id) . "'>
+            <textarea name='comment' class='form-control mb-2' rows='2' placeholder='Odgovori...'></textarea>
+            <button type='submit' class='btn btn-sm btn-secondary'>Odgovori</button>
+        </form>";
+}
+
+
+
+// Brisanje komentara
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment_id'])) {
+    $comment_id = (int)$_POST['delete_comment_id'];
+
+    $stmt = $pdo->prepare("DELETE FROM comments WHERE id = ? AND user_id = ?");
+    $stmt->execute([$comment_id, $_SESSION['user_id']]);
+
+    header("Location: single_post.php?id=" . $_GET['id']);
+    exit;
 }
 
 // Provera ID-a posta
@@ -63,7 +90,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 $post_id = (int)$_GET['id'];
 
-// Dohvatanje posta
+// Preuzimanje posta
 $stmt = $pdo->prepare("SELECT posts.*, users.username, categories.name AS category_name 
                        FROM posts 
                        LEFT JOIN users ON posts.user_id = users.id 
@@ -77,20 +104,6 @@ if (!$post) {
     exit;
 }
 
-// Dodavanje komentara ili odgovora
-if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['comment']) && isset($_SESSION['user_id'])) {
-    $comment = trim($_POST['comment']);
-    $parent_id = isset($_POST['parent_id']) && is_numeric($_POST['parent_id']) ? $_POST['parent_id'] : null;
-    $user_id = $_SESSION['user_id'];
-
-    if (!empty($comment)) {
-        $stmt = $pdo->prepare("INSERT INTO comments (post_id, user_id, parent_id, content) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$post_id, $user_id, $parent_id, $comment]);
-    }
-
-    header("Location: single_post.php?id=" . $post_id);
-    exit;
-}
 
 
 include 'views/single_post.view.php';
