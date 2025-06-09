@@ -52,6 +52,17 @@ function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
     }
 }
 
+function showAnswer($comment) {
+    if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== $comment['user_id']) {
+        echo "<form method='POST' class='mt-2'>
+            <input type='hidden' name='parent_id' value='{$comment['id']}'>
+            <textarea name='comment' class='form-control mb-2' rows='2' placeholder='Odgovori...'></textarea>
+            <button type='submit' class='btn btn-sm btn-secondary'>Odgovori</button>
+        </form>";
+    }
+}
+
+
 // Brisanje komentara
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment_id'])) {
     $comment_id = (int)$_POST['delete_comment_id'];
