@@ -23,6 +23,12 @@ require_once __DIR__ . '/../parts/top.php';
         </div>
     </div>
 
+      <div class="card-body">
+            <h1 class="card-title">Komentari</h1>
+            <div class="mb-2 text-muted">
+               <?php showComments($pdo, $post_id); ?>
+        </div>
+
     <h4 class="mt-5 text-center">Komentar</h4>
     <?php if(isset($_SESSION['user_id'])) : ?>
         <form method='POST' class='mb-4'>
