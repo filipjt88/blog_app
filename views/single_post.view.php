@@ -24,7 +24,7 @@ require_once __DIR__ . '/../parts/top.php';
     </div>
 
       <div class="card-body">
-         <h4 class="mt-5 text-center">Komentar</h4>
+         <h4 class="mt-5 text-center">Vas komentar</h4>
     <?php if(isset($_SESSION['user_id'])) : ?>
         <form method='POST' class='mb-4'>
             <textarea name='comment' class='form-control' rows='6' placeholder='Please your comment...'></textarea>
@@ -33,7 +33,7 @@ require_once __DIR__ . '/../parts/top.php';
         <?php else: ?>
             <p class='text-center'>Morate biti prijavljeni da biste ostavili svoj komentar!</p>
         <?php endif; ?>
-            <h1 class="card-title text-center">Komentari</h1>
+            <h3 class="card-title text-center">Komentari</h3>
             <div class="mb-2 text-muted">
                <?php showComments($pdo, $post_id); ?>
         </div>
