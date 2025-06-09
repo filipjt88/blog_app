@@ -34,11 +34,6 @@ function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
         echo "<p>" . nl2br(htmlspecialchars($comment['content'])) . "</p>";
         echo "<small class='text-muted'>" . date('d.m.Y H:i', strtotime($comment['created_at'])) . "</small>";
 
-         // Dodaj prikaz forme za odgovor (ali ne dozvoli korisniku da odgovara sam sebi)
-        if (isset($_SESSION['user_id']) && $_SESSION['user_id'] != $comment['user_id']) {
-            showAnswer($comment['id']);
-        }
-
         if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $comment['user_id']) {
     echo "<form method='POST' class='d-inline'>
             <input type='hidden' name='edit_comment_id' value='{$comment['id']}'>
@@ -56,20 +51,6 @@ function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
         showComments($pdo, $post_id, $comment['id'], $margin + 40);
     }
 }
-
-function showAnswer($comment_id) {
-    if (!isset($_SESSION['user_id'])) {
-        return; // Samo ulogovani korisnici mogu da odgovaraju
-    }
-
-    echo "<form method='POST' class='mt-2'>
-            <input type='hidden' name='parent_id' value='" . htmlspecialchars($comment_id) . "'>
-            <textarea name='comment' class='form-control mb-2' rows='2' placeholder='Odgovori...'></textarea>
-            <button type='submit' class='btn btn-sm btn-secondary'>Odgovori</button>
-        </form>";
-}
-
-
 
 // Brisanje komentara
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment_id'])) {
@@ -104,6 +85,21 @@ if (!$post) {
     exit;
 }
 
+// Dodavanje komentara ili odgovora
+if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['comment']) && isset($_SESSION['user_id'])) {
+    $comment = trim($_POST['comment']);
+    $parent_id = isset($_POST['parent_id']) && is_numeric($_POST['parent_id']) ? $_POST['parent_id'] : null;
+    $user_id = $_SESSION['user_id'];
+
+    if (!empty($comment)) {
+        $stmt = $pdo->prepare("INSERT INTO comments (post_id, user_id, parent_id, content) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$post_id, $user_id, $parent_id, $comment]);
+    }
+
+    // Redirekcija da se spreči ponovno slanje forme
+    header("Location: single_post.php?id=" . $post_id);
+    exit;
+}
 
 
 include 'views/single_post.view.php';

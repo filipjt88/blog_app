@@ -9,7 +9,7 @@ require_once __DIR__ . '/../parts/top.php';
         <div class="col-md-8 offset-2">
             <div class="card shadow-sm mt-5">
         <?php if (!empty($post['image'])): ?>
-            <img src="<?= htmlspecialchars($post['image']) ?>" class="card-img-top" alt="Slika posta" style="max-height: 800px; object-fit: cover;">
+            <img src="<?= htmlspecialchars($post['image']) ?>" class="card-img-top" alt="Slika posta" style="max-height: 800px; object-fit: `cover`;">
         <?php endif; ?>
 
         <div class="card-body">
@@ -37,7 +37,6 @@ require_once __DIR__ . '/../parts/top.php';
             <div class="mb-2 text-muted">
                <?php showComments($pdo, $post_id); ?>
             </div>
-            <?php showAnswer($comment_id, $comment_user_id); ?>
         </div>
          <a href="index.php" class="btn btn-outline-dark mt-5 mb-5">← Nazad na sve postove</a>
     </div>
