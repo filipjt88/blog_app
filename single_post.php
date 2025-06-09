@@ -34,13 +34,14 @@ function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
         echo "<p>" . nl2br(htmlspecialchars($comment['content'])) . "</p>";
         echo "<small class='text-muted'>" . date('d.m.Y H:i', strtotime($comment['created_at'])) . "</small>";
 
-        if (isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id']) && $_SESSION['user_id'] != $comment['user_id']) {
             echo "<form method='POST' class='mt-2'>
-                <input type='hidden' name='parent_id' value='{$comment['id']}'>
-                <textarea name='comment' class='form-control mb-2' rows='2' placeholder='Odgovori...'></textarea>
-                <button type='submit' class='btn btn-sm btn-secondary'>Odgovori</button>
-            </form>";
+        <input type='hidden' name='parent_id' value='{$comment['id']}'>
+        <textarea name='comment' class='form-control mb-2' rows='1' placeholder='Odgovori...'></textarea>
+        <button type='submit' class='btn btn-sm btn-secondary'>Odgovori</button>
+    </form>";
         }
+
 
         echo "</div>";
 
