@@ -11,7 +11,7 @@ require_once __DIR__ . '/../parts/top.php';
         <div class="row">
             <?php foreach ($posts as $post): ?>
                 <div class="col-md-3 mb-5">
-                    <div class="card mb-5 h-100">
+                    <div class="card mt-5 h-100">
                         <?php if (!empty($post['image'])): ?>
                             <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="card-img-top" style="height: 200px; object-fit: cover;">
                         <?php endif; ?>
@@ -23,7 +23,7 @@ require_once __DIR__ . '/../parts/top.php';
                             </h5>
                             <p class="card-text"><?= nl2br(htmlspecialchars(mb_strimwidth($post['content'], 0, 200, '...'))) ?></p>
 
-                            <small class="text-muted mb-3 d-block">
+                            <small class="text-muted d-block">
                                 Kategorija: <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
                                 Autor: <?= htmlspecialchars($post['username']) ?> </br>
                                 Datum objave: <strong><?= date('d.m.Y H:i', strtotime($post['created_at'])) ?></strong>

@@ -86,14 +86,5 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['comment']) && isset($
     exit;
 }
 
-if (!empty($comment)) {
-    $stmt = $pdo->prepare("INSERT INTO comments (post_id, user_id, parent_id, content) VALUES (?, ?, ?, ?)");
-    $success = $stmt->execute([$post_id, $user_id, $parent_id, $comment]);
-
-    if (!$success) {
-        print_r($stmt->errorInfo());
-    }
-}
-
 
 include 'views/single_post.view.php';
