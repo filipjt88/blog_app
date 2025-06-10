@@ -29,3 +29,4 @@ require_once __DIR__ . '/../parts/top.php'; ?>
     </div>
 </div>
 <?php require_once __DIR__ . '/../parts/bottom.php'; ?>
+<?php require_once __DIR__ . '/../parts/footer.php'; ?>

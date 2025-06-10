@@ -14,8 +14,9 @@ $stmt = $pdo->query("SELECT * FROM categories");
 $categories = $stmt->fetchAll();
 ?>
 
-<div class="container mt-5">
-    <div class="row">
+<div class="container mt-5 mb-5">
+    <?php require_once __DIR__ . '/./parts/navbar.php'; ?>
+    <div class="row mt-5">
         <div class="col-md-7 offset-2 mt-5">
         <h2 class="text-center">Novi blog post</h2>
     <?php if (isset($_GET['error'])): ?>
@@ -49,4 +50,7 @@ $categories = $stmt->fetchAll();
         </div>
     </div>
 </div>
+
+
 <?php include 'parts/bottom.php'; ?>
+<?php require_once __DIR__ . '/parts/footer.php'; ?>

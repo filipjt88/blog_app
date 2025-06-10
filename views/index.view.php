@@ -42,10 +42,11 @@ require_once __DIR__ . '/../parts/top.php';
                 </div>
             <?php endforeach; ?>
         </div>
-</div>
 <?php else: ?>
     <h4 class="text-center mt-5">Nema postova!</h4>
 <?php endif; ?>
+</div>
 
 
 <?php require_once __DIR__ . '/../parts/bottom.php'; ?>
+<?php require_once __DIR__ . '/../parts/footer.php'; ?>
