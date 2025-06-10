@@ -7,27 +7,29 @@ $categories = $stmt->fetchAll();
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Blog app</a>
+    <a class="navbar-brand" href="index.php">Blog app |</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Pocetna strancia</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Kategorije
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <?php foreach($categories as $cat): ?>
-            <li><a class="dropdown-item" href="#"><?= htmlspecialchars($cat['name']) ?></a></li>
-            <?php endforeach; ?>
-          </ul>
+          <a class="nav-link active" aria-current="page" href="index.php">Sport</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./create_blog_post.php">Kreiraj novi post</a>
+          <a class="nav-link" href="#">Biznis</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Zdravlje</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tehnologija</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Automobili</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Putovanja</a>
         </li>
       </ul>
     </div>
@@ -35,6 +37,9 @@ $categories = $stmt->fetchAll();
     <li class="nav-item">
           <?php if(isset($_SESSION['username'])): ?>
           <a class="nav-link active" aria-current="page" href="#">User: <?= htmlspecialchars($_SESSION['username']) ?></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Moj nalog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./logout.php">Odjava</a>

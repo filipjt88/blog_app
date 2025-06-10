@@ -12,12 +12,12 @@ require_once __DIR__ . '/../parts/top.php';
                     <img src="<?= htmlspecialchars($post['image']) ?>" class="card-img-top" alt="Slika posta" style="max-height: 800px; object-fit: `cover`;">
                 <?php endif; ?>
 
-                <div class="card-body">
-                    <h1 class="card-title"><?= htmlspecialchars($post['title']) ?></h1>
-                    <div class="mb-2 text-muted">
+                <div class="card-body" style="text-align: justify;">
+                    <h2 class="card-title text-center mb-5"><?= htmlspecialchars($post['title']) ?></h1>
+                    <div class="mb-2 text-muted mb-5">
                         <span><strong>Autor:</strong> <?= htmlspecialchars($post['username']) ?></span> |
                         <span><strong>Kategorija:</strong> <?= htmlspecialchars($post['category_name'] ?? 'Nema') ?></span> |
-                        <span><strong>Datum:</strong> <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?></span>
+                        <span><strong>Datum:</strong> <?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>h</span>
                     </div>
                     <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
                 </div>
