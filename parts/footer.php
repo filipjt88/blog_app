@@ -17,6 +17,9 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Kategorije</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Novi post</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">O blogu</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-facebook fa-lg"></i></a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
     </ul>
     <p class="text-center text-muted">&copy; 2025 Blog app, Inc</p>
   </footer>
