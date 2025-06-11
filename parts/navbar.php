@@ -5,6 +5,7 @@ $stmt = $pdo->query("SELECT * FROM categories");
 $categories = $stmt->fetchAll();
 ?>
 
+<?php require_once __DIR__ . '/../core/init.php'; ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Blog app |</a>
