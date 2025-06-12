@@ -3,9 +3,9 @@ include 'core/db.php';
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     // Prikupljanje podataka preko forme
-    $username = trim($_POST['username']);
-    $email    = trim($_POST['email']);
-    $password = trim($_POST['password']);
+    $username         = trim($_POST['username']);
+    $email            = trim($_POST['email']);
+    $password         = trim($_POST['password']);
     $password_confirm = trim($_POST['password_confirm']);
 
     // Provera da li su sva polja popunjena

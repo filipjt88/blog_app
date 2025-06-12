@@ -4,7 +4,7 @@ require_once 'core/db.php';
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     $post_id = $_POST['id'];
-    $title = trim($_POST['title']);
+    $title   = trim($_POST['title']);
     $content = trim($_POST['content']);
     $user_id = $_SESSION['user_id'];
 

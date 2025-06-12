@@ -6,10 +6,7 @@ include_once 'core/init.php';
 // Funkcija koja prikazuje komentare
 function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
 {
-    $query = "SELECT c.*, u.username 
-              FROM comments c 
-              JOIN users u ON c.user_id = u.id 
-              WHERE c.post_id = :post_id";
+    $query = "SELECT c.*, u.username FROM comments c JOIN users u ON c.user_id = u.id WHERE c.post_id = :post_id";
 
     if ($parent_id === null) {
         $query .= " AND c.parent_id IS NULL";
@@ -19,7 +16,7 @@ function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
 
     $query .= " ORDER BY c.created_at ASC";
 
-    $stmt = $pdo->prepare($query);
+    $stmt   = $pdo->prepare($query);
     $params = ['post_id' => $post_id];
     if ($parent_id !== null) {
         $params['parent_id'] = $parent_id;
@@ -83,11 +80,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 $post_id = (int)$_GET['id'];
 
 // Preuzimanje posta
-$stmt = $pdo->prepare("SELECT posts.*, users.username, categories.name AS category_name 
-                       FROM posts 
-                       LEFT JOIN users ON posts.user_id = users.id 
-                       LEFT JOIN categories ON posts.category_id = categories.id 
-                       WHERE posts.id = ?");
+$stmt = $pdo->prepare("SELECT posts.*, users.username, categories.name AS category_name FROM posts LEFT JOIN users ON posts.user_id = users.id LEFT JOIN categories ON posts.category_id = categories.id WHERE posts.id = ?");
 $stmt->execute([$post_id]);
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
