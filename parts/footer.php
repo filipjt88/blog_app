@@ -16,7 +16,7 @@
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pocetna stranica</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Kategorije</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Novi post</a></li>
+      <li class="nav-item"><a href="create_blog_post.php" class="nav-link px-2 text-muted">Novi post</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">O blogu</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-facebook fa-lg"></i></a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-instagram fa-lg"></i></a></li>

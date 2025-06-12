@@ -12,37 +12,30 @@
     --green: #008000;
 }
 
-body{
+body {
     background: #ddd;
 }
 
-#loginForm,#registerForm {
+#loginForm,
+#registerForm {
     margin-top: 100px;
 }
 
-.nav-link-form{
+.nav-link-form {
     text-align: center;
     margin-top: 10px;
 }
-
 
 label {
     padding: 10px;
 }
 
 input {
-    border-radius:10px 4px;
+    border-radius: 10px 4px;
     border: 1px solid var(--dark);
     outline: 2px solid #333;
-}
-
-#blogForm {
-    background-color: red;
 }
 
 input::placeholder {
     font-style: italic;
 }
-
-
-

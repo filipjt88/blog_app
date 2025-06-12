@@ -1,6 +1,7 @@
 <?php
 include './core/db.php';
 require_once __DIR__ . '/../parts/top.php';
+
 $stmt = $pdo->query("SELECT * FROM categories");
 $categories = $stmt->fetchAll();
 ?>
