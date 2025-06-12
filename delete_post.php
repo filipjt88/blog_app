@@ -1,5 +1,9 @@
 <?php
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startap_errors',1);
+error_reporting(E_ALL);
+
 require_once 'core/db.php';
 
 if(!isset($_SESSION['user_id'])) {
@@ -18,17 +22,22 @@ $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = ?");
 $stmt->execute([$post_id]);
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if($post && !empty($post['image'])) {
-    $image_path = 'uploads/' . $post['image'];
-
-    if(file_exists($image_path)) {
-        unlink($image_path);
-    }
-}
-
 if(!$post || $post['user_id'] != $_SESSION['user_id']) {
     header("Location: index.php");
     exit;
+}
+
+if(!empty($post['image'])) {
+    $image_filname = basename($post['image']);
+    $image_path = __DIR__ . '/uploads/' . $image_filname;
+
+    if(file_exists($image_path)) {
+        if(!unlink($image_path)) {
+            error_log("Nije moguce obrisati sliku:" .$image_path);
+        }
+    } else {
+        error_log("Fajl ne postoji:" .$image_path);
+    }
 }
 
 // Obrisi Post

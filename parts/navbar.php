@@ -19,22 +19,22 @@ $categories = $stmt->fetchAll();
           <a class="nav-link active" aria-current="page" href="index.php">Naslovna</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">| Biznis |</a>
+          <a class="nav-link" href="index.php?category=Biznis">| Biznis |</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"> Zdravlje |</a>
+          <a class="nav-link" href="index.php?category=Zdravlje"> Zdravlje |</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tehnologija |</a>
+          <a class="nav-link" href="index.php?category=Tehnologija">Tehnologija |</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sport |</a>
+          <a class="nav-link" href="index.php?category=Sport">Sport |</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Automobili |</a>
+          <a class="nav-link" href="index.php?category=Automobili">Automobili |</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Putovanja |</a>
+          <a class="nav-link" href="index.php?category=Putivanja">Putovanja |</a>
         </li>
       </ul>
     </div>
