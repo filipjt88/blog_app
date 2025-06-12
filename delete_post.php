@@ -18,6 +18,14 @@ $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = ?");
 $stmt->execute([$post_id]);
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
+if($post && !empty($post['image'])) {
+    $image_path = 'uploads/' . $post['image'];
+
+    if(file_exists($image_path)) {
+        unlink($image_path);
+    }
+}
+
 if(!$post || $post['user_id'] != $_SESSION['user_id']) {
     header("Location: index.php");
     exit;

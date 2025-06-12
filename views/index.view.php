@@ -43,7 +43,7 @@ require_once __DIR__ . '/../parts/top.php';
             <?php endforeach; ?>
         </div>
     <?php else: ?>
-        <h4 class="text-center mt-5">Nema postova!</h4>
+        <h4 class="text-center mt-5">Nema blog postova!</h4>
     <?php endif; ?>
 </div>
 
