@@ -3,9 +3,9 @@ session_start();
 require_once 'core/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $title = trim($_POST['title']);
-    $content = trim($_POST['content']);
-    $user_id = $_SESSION['user_id'];
+    $title       = trim($_POST['title']);
+    $content     = trim($_POST['content']);
+    $user_id     = $_SESSION['user_id'];
     $category_id = isset($_POST['category_id']) ? (int)$_POST['category_id'] : null;
 
     $image_path = null;
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             mkdir($target_dir, 0777, true);
         }
 
-        $image_name = time() . '_' . basename($_FILES["image"]["name"]);
+        $image_name  = time() . '_' . basename($_FILES["image"]["name"]);
         $target_file = $target_dir . $image_name;
 
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
