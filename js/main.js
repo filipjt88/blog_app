@@ -46,4 +46,26 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 });
 
 
+document.addEventListener("DOMContentLoaded", function (e) {
+    const links = document.querySelectorAll("#category-filter a");
+    const posts = document.querySelectorAll('.post-item');
+
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const selectCategory = this.dataset.category;
+
+            posts.forEach(post => {
+                const postCategory = post.dataset.category;
+
+                if (selectCategory === 'all' || postCategory === selectCategory) {
+                    post.computedStyleMap.display = 'block';
+                } else {
+                    post.computedStyleMap.display = 'none';
+                }
+            });
+        });
+    });
+});
+
 
