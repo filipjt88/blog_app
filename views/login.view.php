@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-3 mt-5">
+        <div class="col-md-6 offset-3">
             <form id="loginForm" action="../login.php" method="POST">
             <h1 class="text-center">Prijava</h1>
                 <label for="email">Email:</label>

@@ -2,6 +2,28 @@
 import { Dropdown, Collapse, initMDB } from "mdb-ui-kit";
 initMDB({ Dropdown, Collapse });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("#category-filter .nav-link");
+    const posts = document.querySelectorAll('.post-item');
+    const noPostsMessage = document.getElementById('no-posts');
+
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const selectCategory = this.dataset.category;
+            posts.forEach(post => {
+                const postCategory = post.dataset.category;
+
+                if (selectCategory === 'all' || postCategory === selectCategory) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
 // Validacija forme za registraciju
 document.getElementById('registerForm').addEventListener('submit', function (e) {
     // Selektovanje elemenata i prikupljanje vrednosti
@@ -38,7 +60,6 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     if (!email || !password) {
         error = 'Popunite sva polja';
     }
-
     if (error) {
         e.preventDefault();
         document.getElementById('loginError').textContent = error;
@@ -46,26 +67,6 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 });
 
 
-document.addEventListener("DOMContentLoaded", function (e) {
-    const links = document.querySelectorAll("#category-filter a");
-    const posts = document.querySelectorAll('.post-item');
 
-    links.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const selectCategory = this.dataset.category;
-
-            posts.forEach(post => {
-                const postCategory = post.dataset.category;
-
-                if (selectCategory === 'all' || postCategory === selectCategory) {
-                    post.computedStyleMap.display = 'block';
-                } else {
-                    post.computedStyleMap.display = 'none';
-                }
-            });
-        });
-    });
-});
 
 

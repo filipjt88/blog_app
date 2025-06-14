@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-3 mt-5">
+        <div class="col-md-6 offset-3">
             <form id="registerForm" action="../register.php" method="POST" novalidate>
                 <h1 class="text-center">Registracija</h1>
                 <label for="username">Korisnicko ime:</label>
