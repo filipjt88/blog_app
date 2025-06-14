@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-6 offset-3">
             <form id="loginForm" action="../login.php" method="POST">
-            <h1 class="text-center">Prijava</h1>
+            <h1 class="text-center">Login</h1>
                 <label for="email">Email:</label>
                 <input type="email" name="email" class="form-control" placeholder="Please enter email..."><br>
                 <label for="email">Password:</label>
