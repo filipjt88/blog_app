@@ -3,9 +3,9 @@ $title = 'Home page';
 require_once __DIR__ . '/../parts/top.php';
 ?>
 
-<div class="container mt-5">
+<div class="container post-container mt-5">
     <?php include './parts/navbar.php'; ?>
-    <h1 id="blogPost" class="text-center mt-5 mb-5">Blog postovi</h1>
+    <h1 class="text-center mt-5 mb-5">Blog postovi</h1>
 
     <?php if (isset($posts) && count($posts) > 0): ?>
         <div class="row">
