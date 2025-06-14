@@ -24,9 +24,9 @@ require_once __DIR__ . '/../parts/top.php';
                             <p class="card-text"><?= nl2br(htmlspecialchars(mb_strimwidth($post['content'], 0, 200, '...'))) ?></p>
 
                             <small class="text-muted d-block">
-                                Kategorija: <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
+                                <b>Kategorija:</b> <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
                                 Autor: <?= htmlspecialchars($post['username']) ?> </br>
-                                Datum objave: <strong><?= date('d.m.Y H:i', strtotime($post['created_at'])) ?></strong>
+                                <b>Datum objave: </b><?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
                             </small>
 
                             <a href="single_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-outline-dark mt-auto">Pročitaj više</a>

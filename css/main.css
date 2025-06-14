@@ -21,6 +21,11 @@ body {
     margin-top: 100px;
 }
 
+#loginForm,
+#registerForm h1 {
+    letter-spacing: 3px;
+}
+
 .nav-link-form {
     text-align: center;
     margin-top: 10px;
