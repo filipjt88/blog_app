@@ -16,10 +16,10 @@ $categories = $stmt->fetchAll();
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul id='category-filter' class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" data-category='all' aria-current="page" href="#">Naslovna</a>
+          <a class="nav-link active" data-category='all' aria-current="page" href="javascript:void(0);">Naslovna</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-category='Biznis' href="#">| Biznis |</a>
+          <a class="nav-link" data-category='Biznis' href="javascript:void(0);">| Biznis |</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-category='Zdravlje' href="#"> Zdravlje |</a>

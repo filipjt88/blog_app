@@ -1,27 +1,36 @@
-// Initialization for ES Users
-import { Dropdown, Collapse, initMDB } from "mdb-ui-kit";
-initMDB({ Dropdown, Collapse });
-
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll("#category-filter .nav-link");
-    const posts = document.querySelectorAll('.post-item');
-    const noPostsMessage = document.getElementById('no-posts');
+    const posts = document.querySelectorAll(".post-item");
+    const noPostsMessage = document.getElementById("no-posts");
 
     links.forEach(link => {
-        link.addEventListener('click', function (e) {
+        link.addEventListener("click", function (e) {
             e.preventDefault();
-            const selectCategory = this.dataset.category;
+            const selectedCategory = this.dataset.category;
+            // Ativna klasa
+            links.forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
+            let visibleCount = 0;
             posts.forEach(post => {
                 const postCategory = post.dataset.category;
 
-                if (selectCategory === 'all' || postCategory === selectCategory) {
-                    post.style.display = 'block';
+                if (selectedCategory === "all" || postCategory === selectedCategory) {
+                    post.style.display = "block";
+                    visibleCount++;
                 } else {
-                    post.style.display = 'none';
+                    post.style.display = "none";
                 }
             });
-        });
-    });
+            if (noPostsMessage) {
+                if (visibleCount === 0) {
+                    noPostsMessage.style.display = "block";
+                    noPostsMessage.textContent = `Nema postova u kategoriji : ${selectedCategory}`;
+                } else {
+                    noPostsMessage.style.display = "none";
+                }
+            }
+        })
+    })
 });
 
 // Validacija forme za registraciju

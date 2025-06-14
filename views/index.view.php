@@ -5,13 +5,13 @@ require_once __DIR__ . '/../parts/top.php';
 
 <div class="container mt-5">
     <?php include './parts/navbar.php'; ?>
-    <h1 class="text-center mt-5 mb-5">Blog postovi</h1>
+    <h1 id="blogPost" class="text-center mt-5 mb-5">Blog postovi</h1>
 
     <?php if (isset($posts) && count($posts) > 0): ?>
         <div class="row">
             <?php foreach ($posts as $post): ?>
                 <div class="col-md-3 mb-5">
-                    <div class="card mt-5 h-100">
+                    <div class="card mt-5 h-100 post-item" data-category="<?= htmlspecialchars($post['category_name']) ?>">
                         <?php if (!empty($post['image'])): ?>
                             <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="card-img-top" style="height: 200px; object-fit: cover;">
                         <?php endif; ?>
@@ -23,8 +23,8 @@ require_once __DIR__ . '/../parts/top.php';
                             </h5>
                             <p class="card-text"><?= nl2br(htmlspecialchars(mb_strimwidth($post['content'], 0, 100, '...'))) ?></p>
 
-                            <small class="text-muted d-block">
-                                <b>Kategorija:</b> <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
+                            <small class="text-muted d-block" data-category>
+                                <b>Kategorija:</b><?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
                                 Autor: <?= htmlspecialchars($post['username']) ?> </br>
                                 <b>Datum objave: </b><?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
                             </small>
