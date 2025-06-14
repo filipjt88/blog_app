@@ -16,12 +16,12 @@ require_once __DIR__ . '/../parts/top.php';
                             <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="card-img-top" style="height: 200px; object-fit: cover;">
                         <?php endif; ?>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-center mb-3">
+                            <h5 class="card-title text-center mb-5">
                                 <a href="single_post.php?id=<?= $post['id'] ?>" class="text-decoration-none text-dark">
                                     <?= nl2br(htmlspecialchars(mb_strimwidth($post['title'], 0, 30, '...'))) ?>
                                 </a>
                             </h5>
-                            <p class="card-text"><?= nl2br(htmlspecialchars(mb_strimwidth($post['content'], 0, 200, '...'))) ?></p>
+                            <p class="card-text"><?= nl2br(htmlspecialchars(mb_strimwidth($post['content'], 0, 100, '...'))) ?></p>
 
                             <small class="text-muted d-block">
                                 <b>Kategorija:</b> <?= htmlspecialchars($post['category_name'] ?? 'Bez kategorije') ?> |
