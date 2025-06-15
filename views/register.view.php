@@ -1,7 +1,6 @@
 <?php $title = 'Register'; ?>
 <?php require_once __DIR__ . '/../parts/top.php'; ?>
 
-
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-3">

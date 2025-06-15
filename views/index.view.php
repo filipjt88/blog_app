@@ -1,4 +1,4 @@
-<?php if (!isset($posts)) die('Nema direktnog pristupa.');
+<?php if (!isset($posts)) die('Nemate direktnog pristupa.');
 $title = 'Home page';
 require_once __DIR__ . '/../parts/top.php';
 ?>
@@ -46,7 +46,6 @@ require_once __DIR__ . '/../parts/top.php';
         <h4 class="text-center mt-5">Nema blog postova!</h4>
     <?php endif; ?>
 </div>
-
 
 <?php require_once __DIR__ . '/../parts/bottom.php'; ?>
 <?php require_once __DIR__ . '/../parts/footer.php'; ?>
