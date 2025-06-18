@@ -42,19 +42,20 @@ $categories = $stmt->fetchAll();
         <li class="nav-item">
           <a href="./create_blog_post.php" class="nav-link">Kreiraj post</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Moj nalog
-          </a>
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+              Moj nalog
+</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li><a href="#" class="dropdown-item">Izmena licnih podataka</a></li>
+              <li><a class="dropdown-item">Promeni email</a></li>
+              <li><a class="dropdown-item">Promeni password</a></li>
+            </ul>
+          </div>
           <li class="nav-item">
           <?php if(isset($_SESSION['username'])): ?>
-          <a class="nav-link active" aria-current="page"><i class="fa-solid fa-user"></i> <?= htmlspecialchars($_SESSION['username']) ?></a>
+          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-user"></i> <?= htmlspecialchars($_SESSION['username']) ?></a>
         </li>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">asdad</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./logout.php">Odjava</a>
