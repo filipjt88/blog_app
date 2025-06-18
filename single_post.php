@@ -34,8 +34,29 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['comment']) && isset($
     exit;
 }
 
+// Brisanje komentara
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment_id'])) {
+    $comment_id = (int)$_POST['delete_comment_id'];
 
+    $stmt = $pdo->prepare("DELETE FROM comments WHERE id = ? AND user_id = ?");
+    $stmt->execute([$comment_id, $_SESSION['user_id']]);
 
+    header("Location: single_post.php?id=" . $_GET['id']);
+    exit;
+}
+
+// Editovanje komentara
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_comment_id'], $_POST['edited_comment'])) {
+    $comment_id = (int)$_POST['edit_comment_id'];
+    $edited_content = trim($_POST['edited_comment']);
+
+    if (!empty($edited_content)) {
+        $stmt = $pdo->prepare("UPDATE comments SET content = ?, created_at = NOW() WHERE id = ? AND user_id = ?");
+        $stmt->execute([$edited_content, $comment_id, $_SESSION['user_id']]);
+    }
+    header("Location: single_post.php?id=" . $_GET['id']);
+    exit;
+}
 
 
 include 'views/single_post.view.php';
