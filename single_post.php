@@ -34,15 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['comment']) && isset($
     exit;
 }
 
-// Brisanje komentara
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment_id'])) {
-    $comment_id = (int)$_POST['delete_comment_id'];
 
-    $stmt = $pdo->prepare("DELETE FROM comments WHERE id = ? AND user_id = ?");
-    $stmt->execute([$comment_id, $_SESSION['user_id']]);
 
-    header("Location: single_post.php?id=" . $_GET['id']);
-    exit;
-}
+
 
 include 'views/single_post.view.php';
