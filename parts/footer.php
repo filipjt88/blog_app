@@ -13,15 +13,7 @@
 
 <div class="container">
   <footer class="py-3 my-4">
-    <ul class="nav justify-content-center border-bottom mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pocetna stranica</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Kategorije</a></li>
-      <li class="nav-item"><a href="create_blog_post.php" class="nav-link px-2 text-muted">Novi post</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">O blogu</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-facebook fa-lg"></i></a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
-    </ul>
+    <ul class="nav justify-content-center border-bottom border-secondary mb-3"></ul>
     <p class="text-center text-muted">&copy; 2025 Blog app, Inc</p>
   </footer>
 </div>

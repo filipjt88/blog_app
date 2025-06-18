@@ -39,12 +39,22 @@ $categories = $stmt->fetchAll();
       </ul>
     </div>
      <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-    <li class="nav-item">
-          <?php if(isset($_SESSION['username'])): ?>
-          <a class="nav-link active" aria-current="page" href="#">User: <?= htmlspecialchars($_SESSION['username']) ?></a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Moj nalog</a>
+          <a href="./create_blog_post.php" class="nav-link">Kreiraj post</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Moj nalog
+          </a>
+          <li class="nav-item">
+          <?php if(isset($_SESSION['username'])): ?>
+          <a class="nav-link active" aria-current="page"><i class="fa-solid fa-user"></i> <?= htmlspecialchars($_SESSION['username']) ?></a>
+        </li>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">asdad</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./logout.php">Odjava</a>
