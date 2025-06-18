@@ -1,5 +1,6 @@
 <?php
-function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
+if(!function_exists('showComments')) {
+    function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
 {
     $sql = "SELECT c.*, u.username 
             FROM comments c 
@@ -35,4 +36,5 @@ function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
         showComments($pdo, $post_id, $comment['id'], $margin + 40);
         echo "</div>";
     }
+}
 }
