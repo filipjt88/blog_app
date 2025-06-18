@@ -1,6 +1,6 @@
 <?php
 if(!function_exists('showComments')) {
-    function showComments($pdo, $post_id, $parent_id = null, $margin = 0)
+    function showComments($pdo, $post_id, $parent_id = null)
     {
         $sql = "SELECT c.*, u.username 
                 FROM comments c 
@@ -16,11 +16,9 @@ if(!function_exists('showComments')) {
             $stmt = $pdo->prepare($sql);
             $stmt->execute(['post_id' => $post_id, 'parent_id' => $parent_id]);
         }
-    
         $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
         foreach ($comments as $comment) {
-            echo "<div class='mb-3 p-2' style='margin-left:{$margin}px; border-left:2px solid #ccc;'>";
+            echo "<div class='mb-3 p-2' style='margin-left: 40px; border-left:2px solid #ccc;'>";
             echo "<strong>" . htmlspecialchars($comment['username']) . "</strong><br>";
             echo "<p>" . nl2br(htmlspecialchars($comment['content'])) . "</p>";
             echo "<small class='text-muted'>" . date('d.m.Y H:i', strtotime($comment['created_at'])) . "</small>";
@@ -33,11 +31,9 @@ if(!function_exists('showComments')) {
                         <button type='submit' class='btn btn-sm btn-secondary'>Reply</button>
                       </form>";
             }
-    
             // Rekurzivno pozivanje za odgovore
-            showComments($pdo, $post_id, $comment['id'], $margin + 40);
+            showComments($pdo, $post_id, $comment['id']);
             echo "</div>";
         }
-    }
-    
+    } 
 }

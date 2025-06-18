@@ -1,6 +1,7 @@
 <?php
 $title = 'Single page';
 require_once __DIR__ . '/../parts/top.php';
+require_once __DIR__ . '/../db_functions/show_comments.php';
 ?>
 
 <div class="container mt-5">
