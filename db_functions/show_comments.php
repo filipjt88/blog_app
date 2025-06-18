@@ -29,14 +29,7 @@ if(!function_exists('showComments')) {
                         <button type='submit' class='btn btn-sm btn-danger ms-2'>Obriši</button>
                       </form>";
             }
-
-            if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $comment['user_id']) {
-                echo "<form method='POST' class='mt-2'>
-                        <input type='hidden' name='edit_comment_id' value='{$comment['id']}'>
-                        <textarea name='edited_comment' class='form-control mb-2' rows='2'>" . htmlspecialchars($comment['content']) . "</textarea>
-                        <button type='submit' class='btn btn-sm btn-primary'>Izmeni</button>
-                      </form>";
-            }
+        
             
             // Forma za odgovor (ako korisnik nije autor komentara)
             if (isset($_SESSION['user_id']) && $_SESSION['user_id'] != $comment['user_id']) {
