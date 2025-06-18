@@ -36,12 +36,11 @@ function showComments($pdo, $post_id, $parent_id = null)
                   </form>";
         }
         // Rekurzivni prikaz odgovora
-        showComments($pdo, $post_id, $comment['id'], $margin + 40);
+        showComments($pdo, $post_id, $comment['id']);
         echo "</div>";
     }
 }
 
-include_once 'db_functions/show_comments.php';
 
 // Brisanje komentara
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment_id'])) {
