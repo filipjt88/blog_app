@@ -1,10 +1,9 @@
 <?php $title = "Izmeni nalog"; ?>
 <?php require_once __DIR__ . '/../parts/top.php'; ?>
 
-<?php var_dump($success); ?>
 
 <div class="container">
-    <?php include './parts/navbar.php'; ?>
+<?php include './parts/navbar.php'; ?>
     <div class="row">
         <div class="col-md-6 offset-md-3 mt-5">
             <h3 class="mb-4 text-center">Izmeni nalog</h3>

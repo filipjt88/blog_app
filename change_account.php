@@ -11,18 +11,18 @@ if(!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Dohvati trenutne podatke korisnika
-$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
-$stmt->execute([$user_id]);
-$user = $stmt->fetch();
-
 $errors  = [];
 $success = "";
+// Dohvati trenutne podatke korisnika
+$stmt = $pdo->prepare("SELECT username, email FROM users WHERE id = ?");
+$stmt->execute([$user_id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     $new_username = trim($_POST['username']);
-    $new_email    = trim($_POST['email']);
-    $new_password = trim($_POST['confirm_password']);
+    $new_email    = $_POST['email'];
+    $new_password = $_POST['confirm_password'];
 
     // Validacija
     if(empty($new_username) || empty($new_email)) {
@@ -53,9 +53,9 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         $_SESSION['username'] = $new_username; // Osvezi sesiju
         $success = 'Podaci su uspesno azurirani!';
         // Ponovo ucitaj azurirane podatke
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt = $pdo->prepare("SELECT username, email FROM users WHERE id = ?");
         $stmt->execute([$user_id]);
-        $user = $stmt->fetch();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
 
