@@ -1,6 +1,7 @@
 <?php $title = "Izmeni nalog"; ?>
 <?php require_once __DIR__ . '/../parts/top.php'; ?>
 
+<?php var_dump($success); ?>
 
 <div class="container">
     <?php include './parts/navbar.php'; ?>
@@ -19,20 +20,22 @@
                 <?php endif; ?>
 
                 <?php if(!empty($success)): ?>
-                    <div class="alert alert-success"><?= $success ?></div>
+                    <div class="alert alert-success"><?= htmlspecialchars($success) ?>
+                </div>
                     <?php endif; ?>
-                <form method="POST">
+
+                <form method="POST" class="mt-4">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username:</label>
-                        <input type="text" name="username" class="form-control" value="<?= htmlspecialchars($user['username']) ?>">
+                        <input type="text" name="username" id="username" class="form-control" value ="<?= htmlspecialchars($user['username']) ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($user['email']) ?>">
+                        <input type="email" id="email" name="email" class="form-control" value="<?= htmlspecialchars($user['email']) ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Nova lozinka: (ostavi prazno ako ne menjas!)</label>
-                        <input type="password" id="password" name="password" class="form-control">
+                        <input type="password" id="password" name="password" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="confirm_password" class="form-label">Potvrdi lozinku:</label>

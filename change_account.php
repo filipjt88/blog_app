@@ -17,7 +17,7 @@ $stmt->execute([$user_id]);
 $user = $stmt->fetch();
 
 $errors  = [];
-$success = [];
+$success = "";
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     $new_username = trim($_POST['username']);
@@ -26,16 +26,16 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Validacija
     if(empty($new_username) || empty($new_email)) {
-        $errors = "Korisnicko ime i email su obavezni!";
+        $errors[] = "Korisnicko ime i email su obavezni!";
     }
 
     if(!filter_var($new_email, FILTER_VALIDATE_EMAIL)) {
-        $errors = "Email adresa nije validna!";
+        $errors[] = "Email adresa nije validna!";
     }
 
     if(!empty($new_password)) {
         if(strlen($new_password) < 6) {
-            $errors = 'Password mora imati minimum 6 karaktera!';
+            $errors[] = 'Password mora imati minimum 6 karaktera!';
         } elseif($new_password !== $confirm_password) {
             $errors[] = 'Passwordi se ne poklapaju!';
         }
