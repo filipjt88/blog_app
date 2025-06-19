@@ -47,7 +47,7 @@ $categories = $stmt->fetchAll();
               Moj nalog
 </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li><a href="#" class="dropdown-item">Izmena licnih podataka</a></li>
+              <li><a href="./change_account.php" class="dropdown-item">Izmena licnih podataka</a></li>
               <li><a class="dropdown-item">Promeni email</a></li>
               <li><a class="dropdown-item">Promeni password</a></li>
             </ul>

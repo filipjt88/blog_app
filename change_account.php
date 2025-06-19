@@ -12,7 +12,7 @@ if(!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Dohvati trenutne podatke korisnika
-$stmt = $pdo->prepare("SELECT * FROM users WHERE id =?");
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 $user = $stmt->fetch();
 
@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
             $stmt->execute([$new_password, $new_email, $hashPassword, $user_id]);
         } else {
             $stmt = $pdo->prepare("UPDATE users SET username = ?, email = ?, WHERE id = ?");
-            $stmt->execute([$new_username,$new_email,$user_id]);
+            $stmt->execute([$new_username, $new_email, $user_id]);
         }
         $_SESSION['username'] = $new_username; // Osvezi sesiju
         $success = 'Podaci su uspesno azurirani!';
