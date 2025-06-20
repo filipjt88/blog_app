@@ -29,7 +29,8 @@ require_once __DIR__ . '/../parts/top.php';
                                 <b>Datum objave: </b><?= date('d.m.Y H:i', strtotime($post['created_at'])) ?>
                             </small>
 
-                            <a href="single_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-outline-dark mt-auto">Pročitaj više</a>
+                            <a href="single_post.php?id=<?= $post['id'] ?>" class="btn btn-sm btn-outline-dark mt-4
+                            ">Pročitaj više</a>
 
                             <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['user_id']): ?>
                                 <div class="pt-3 d-flex justify-content-between">

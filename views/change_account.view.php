@@ -1,7 +1,6 @@
 <?php $title = "Izmeni nalog"; ?>
 <?php require_once __DIR__ . '/../parts/top.php'; ?>
 
-
 <div class="container">
 <?php include './parts/navbar.php'; ?>
     <div class="row">

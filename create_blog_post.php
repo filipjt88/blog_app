@@ -16,7 +16,7 @@ $categories = $stmt->fetchAll();
 <div class="container mt-5 mb-5">
     <?php require_once __DIR__ . '/./parts/navbar.php'; ?>
     <div class="row mt-5">
-        <div class="col-md-7 offset-2 mt-5">
+        <div class="col-md-6 offset-md-3 mt-5">
         <h2 class="text-center">Novi blog post</h2>
     <?php if (isset($_GET['error'])): ?>
         <div class="alert alert-danger"><?= htmlspecialchars($_GET['error']) ?></div>
