@@ -13,6 +13,7 @@ $user_id = $_SESSION['user_id'];
 
 $errors  = [];
 $success = "";
+
 // Dohvati trenutne podatke korisnika
 $stmt = $pdo->prepare("SELECT username, email FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
