@@ -6,6 +6,7 @@ $stmt = $pdo->query("SELECT * FROM categories");
 $categories = $stmt->fetchAll();
 ?>
 
+<!-- Navbar -->
 <?php require_once __DIR__ . '/../core/init.php'; ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <div class="container-fluid">
@@ -68,3 +69,4 @@ $categories = $stmt->fetchAll();
         </ul>
   </div>
 </nav>
+<!-- End of navbar -->
