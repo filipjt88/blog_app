@@ -1,3 +1,4 @@
+<!-- Footer -->
 <?php require_once __DIR__ . '/../core/init.php'; ?>
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center">
@@ -17,3 +18,4 @@
     <p class="text-center text-muted">&copy; 2025 Blog app, Inc</p>
   </footer>
 </div>
+<!-- End of footer -->
