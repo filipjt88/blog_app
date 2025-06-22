@@ -1,3 +1,4 @@
+// JS
 // Navigacioni menu, filter po kategorijama
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll("#category-filter .nav-link");
