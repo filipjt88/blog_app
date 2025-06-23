@@ -1,3 +1,4 @@
+<!-- Edit post -->
 <?php
 $title = 'Edit post';
 require_once __DIR__ . '/../parts/top.php'; ?>
@@ -31,3 +32,4 @@ require_once __DIR__ . '/../parts/top.php'; ?>
 
 <?php require_once __DIR__ . '/../parts/bottom.php'; ?>
 <?php require_once __DIR__ . '/../parts/footer.php'; ?>
+<!-- End of Edit post -->
