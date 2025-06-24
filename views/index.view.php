@@ -1,4 +1,4 @@
-<!-- End index -->
+<!-- Index page -->
 <?php if (!isset($posts)) die('Nemate direktnog pristupa.');
 $title = 'Home page';
 require_once __DIR__ . '/../parts/top.php';
@@ -51,4 +51,4 @@ require_once __DIR__ . '/../parts/top.php';
 
 <?php require_once __DIR__ . '/../parts/bottom.php'; ?>
 <?php require_once __DIR__ . '/../parts/footer.php'; ?>
-<!-- End of index -->
+<!-- End of Index page -->

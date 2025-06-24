@@ -1,4 +1,4 @@
-<!-- End login -->
+<!--  Login page -->
 <?php $title = 'Login'; ?>
 <?php require_once __DIR__ . '/../parts/top.php'; ?>
 
@@ -25,4 +25,4 @@
 </div>
 <?php require_once __DIR__ . '/../parts/bottom.php'; ?>
 <?php require_once __DIR__ . '/../parts/footer.php'; ?>
-<!-- End of login -->
+<!--  End of Login page -->
