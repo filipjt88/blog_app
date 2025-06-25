@@ -14,7 +14,7 @@ $user_id = $_SESSION['user_id'];
 $errors  = [];
 $success = "";
 
-// Dohvati trenutne podatke korisnika
+// Ucitaj trenutne podatke korisnika
 $stmt = $pdo->prepare("SELECT username, email FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -22,8 +22,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     $new_username = trim($_POST['username']);
-    $new_email    = $_POST['email'];
+    $new_email    = trim($_POST['email']);
     $new_password = $_POST['confirm_password'];
+    $confirm_password = $_POST['confirm_password'];
 
     // Validacija
     if(empty($new_username) || empty($new_email)) {
@@ -37,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     if(!empty($new_password)) {
         if(strlen($new_password) < 6) {
             $errors[] = 'Password mora imati minimum 6 karaktera!';
-        } elseif($new_password !== $confirm_password) {
+        } elseif ($new_password !== $confirm_password) {
             $errors[] = 'Passwordi se ne poklapaju!';
         }
     }
@@ -53,6 +54,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         }
         $_SESSION['username'] = $new_username; // Osvezi sesiju
         $success = 'Podaci su uspesno azurirani!';
+        
         // Ponovo ucitaj azurirane podatke
         $stmt = $pdo->prepare("SELECT username, email FROM users WHERE id = ?");
         $stmt->execute([$user_id]);

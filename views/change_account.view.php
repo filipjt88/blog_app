@@ -34,7 +34,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Nova lozinka: (ostavi prazno ako ne menjas!)</label>
-                        <input type="password" id="password" name="password" class="form-control" required>
+                        <input type="password" id="password" name="password" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="confirm_password" class="form-label">Potvrdi lozinku:</label>
