@@ -16,7 +16,7 @@ $success = "";
 
 // Ucitaj trenutne podatke korisnika
 $stmt = $pdo->prepare("SELECT username, email FROM users WHERE id = ?");
-$stmt->execute([$user_id]);
+$stmt->execute([$_SESSION['user_id']]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 

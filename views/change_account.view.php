@@ -1,6 +1,6 @@
 <!-- Change account -->
 <?php $title = "Izmeni nalog"; ?>
-<?php require_once __DIR__ . '/../parts/top.php'; ?>
+<?php __DIR__ . '/../parts/navbar.php'; ?>
 
 <div class="container">
 <?php include './parts/navbar.php'; ?>
@@ -26,11 +26,11 @@
                 <form method="POST" class="mt-4">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username:</label>
-                        <input type="text" name="username" id="username" class="form-control" value ="<?= htmlspecialchars($user['username']) ?>" required>
+                        <input type="text" name="username" id="username" class="form-control" value ="<?= htmlspecialchars($_POST['username'] ?? $user['username'] ?? '') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" value="<?= htmlspecialchars($user['email']) ?>" required>
+                        <input type="email" id="email" name="email" class="form-control" value="<?= htmlspecialchars($_POST['email'] ?? $user['email'] ?? '') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Nova lozinka: (ostavi prazno ako ne menjas!)</label>
