@@ -47,6 +47,22 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     }
 
+    // Provera da li je email zauzet u bazi
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ? AND id != ?");
+    $stmt->execute([$new_email,$user_id]);
+    $existingEmail = $stmt->fetch();
+    if($existingEmail) {
+        $errors[] = "Navedena email adresa vec postoji!";
+    }
+
+    // Provera da li je username zauzet u bazi
+    $stmt = $pdo->prepare("SELECT username FROM users WHERE username = ? AND id != ?");
+    $stmt->execute([$new_username,$user_id]);
+    $existingUsername = $stmt->fetch();
+    if($existingUsername) {
+        $errors[] = "Korisnicko ime vec postoji!";
+    }
+
     if(empty($errors)) {
         if($updatePassword) {
             $hashPassword = password_hash($new_password, PASSWORD_DEFAULT);
