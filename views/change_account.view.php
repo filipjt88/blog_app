@@ -25,7 +25,7 @@
 
                 <form method="POST" class="mt-4">
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username:</label>
+                        <label for="username" class="form-label">Korisnicko ime:</label>
                         <input type="text" name="username" id="username" class="form-control" value ="<?= htmlspecialchars($_POST['username'] ?? $user['username'] ?? '') ?>" required>
                     </div>
                     <div class="mb-3">
@@ -40,7 +40,7 @@
                         <label for="confirm_password" class="form-label">Potvrdi lozinku:</label>
                         <input type="password" id="confirm_password" name="confirm_password" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Sacuvaj izmene</button>
+                    <button type="submit" class="btn btn-warning w-100 mt-4">Sacuvaj izmene</button>
                 </form>
         </div>
     </div>
