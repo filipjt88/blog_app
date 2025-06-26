@@ -30,7 +30,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" value="<?= htmlspecialchars($_POST['email'] ?? $user['email'] ?? '') ?>" required>
+                        <input type="email" id="email" name="email" class="form-control" value="<?= htmlspecialchars($_POST['email'] ?? $user['email'] ?? '') ?>">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Nova lozinka: (ostavi prazno ako ne menjas lozniku)</label>
