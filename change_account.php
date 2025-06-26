@@ -31,6 +31,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         $errors[] = "Korisnicko ime i email su obavezni!";
     }
 
+    if(!preg_match('/^[a-z0-9]+$/', $new_username)) {
+        $errors[] = "Korisnicko ime moze sadrzati samo mala slova i brojeve bez razmaka i specijalnih karaktera!";
+    }
+
     if(!filter_var($new_email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Email adresa nije validna!";
     }
