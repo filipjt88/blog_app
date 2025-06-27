@@ -21,7 +21,7 @@
                 <?php if(!empty($success)): ?>
                     <div class="alert alert-success"><?= htmlspecialchars($success) ?>
                 </div>
-                    <?php endif; ?>
+                <?php endif; ?>
 
                 <form method="POST" class="mt-4">
                     <div class="mb-3">
