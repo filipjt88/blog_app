@@ -36,11 +36,22 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['comment']) && isset($
 
 // Brisanje komentara
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment_id'])) {
-    $comment_id = (int)$_POST['delete_comment_id'];
-    $stmt = $pdo->prepare("DELETE FROM comments WHERE id = ? AND user_id = ?");
-    $stmt->execute([$comment_id, $_SESSION['user_id']]);
+    if($isAdmin) {
+        // Admin moze obrisati svaki komentar
+        $stmt = $pdo->prepare("DELETE FROM comments WHERE id = ?");
+        $stmt->execute([$comment_id]);
+    } else {
+        // Korisnik moze obrisati samo svoj komentar
+        $stmt = $pdo->prepare("DELETE from comments WHERE id = ? AND user_id = ?");
+        $stmt->execute([$comment_id,$_SESSION['user_id']]);
+    }
     header("Location: single_post.php?id=" . $_GET['id']);
     exit;
+    // $comment_id = (int)$_POST['delete_comment_id'];
+    // $stmt = $pdo->prepare("DELETE FROM comments WHERE id = ? AND user_id = ?");
+    // $stmt->execute([$comment_id, $_SESSION['user_id']]);
+    // header("Location: single_post.php?id=" . $_GET['id']);
+    // exit;
 }
 
 // Editovanje komentara
