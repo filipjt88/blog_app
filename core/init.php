@@ -7,6 +7,7 @@ if(isset($_SESSION['user_id'])) {
     $stmt->execute([$_SESSION['user_id']]);
     $currentUser = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
 $isAdmin = isset($currentUser['role']) && $currentUser['role'] === 'admin';
 
 if (session_status() === PHP_SESSION_NONE) {
