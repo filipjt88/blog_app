@@ -1,3 +1,4 @@
+<!-- Single post -->
 <?php
 $title = 'Single page';
 require_once __DIR__ . '/../parts/top.php';
@@ -49,3 +50,4 @@ require_once __DIR__ . '/../db_functions/show_comments.php';
 
 <?php require_once __DIR__ . '/../parts/bottom.php';  ?>
 <?php require_once __DIR__ . '/../parts/footer.php'; ?>
+<!-- End of Single post -->
