@@ -8,7 +8,7 @@ $categories = $stmt->fetchAll();
 
 <!-- Navbar -->
 <?php require_once __DIR__ . '/../core/init.php'; ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Blog app |</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,10 +43,9 @@ $categories = $stmt->fetchAll();
         <li class="nav-item">
           <a href="./create_blog_post.php" class="nav-link">Kreiraj post</a>
         </li>
-        <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-              Moj nalog
-</a>
+        <div class="dropdown d-flex align-items-center">
+            <a class="btn btn-light btn-sm dropdown-toggle" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+              Moj nalog</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
               <li><a href="./change_account.php" class="dropdown-item">Izmena licnih podataka</a></li>
               <li><a class="dropdown-item">Promeni email</a></li>
