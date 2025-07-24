@@ -1,3 +1,4 @@
+<!-- Comments -->
 <?php
 if(!function_exists('showComments')) {
     function showComments($pdo, $post_id, $parent_id = null)
