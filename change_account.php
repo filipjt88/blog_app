@@ -1,3 +1,4 @@
+<!-- Chabge account -->
 <?php
 session_start();
 require_once 'core/db.php';
@@ -67,6 +68,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         $errors[] = "Korisnicko ime vec postoji!";
     }
 
+    // Errors
     if(empty($errors)) {
         if($updatePassword) {
             $hashPassword = password_hash($new_password, PASSWORD_DEFAULT);
