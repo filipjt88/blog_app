@@ -1,3 +1,4 @@
+<!-- Top -->
 <?php require_once __DIR__ . '/../core/init.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
