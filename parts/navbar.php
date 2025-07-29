@@ -8,64 +8,69 @@ $categories = $stmt->fetchAll();
 
 <!-- Navbar -->
 <?php require_once __DIR__ . '/../core/init.php'; ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Blog app |</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="index.php">
+      <i class="fa-solid fa-feather-pointed text-primary me-2"></i>BlogApp
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#modernNavbar" aria-controls="modernNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul id='category-filter' class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+    <div class="collapse navbar-collapse" id="modernNavbar">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
         <li class="nav-item">
-          <a class="nav-link active" data-category='all' aria-current="page" href="./index.php">Naslovna</a>
+          <a class="nav-link px-3 text-dark" href="index.php" data-category="all">Naslovna</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-category='Biznis' href="javascript:void(0);">| Biznis |</a>
+          <a class="nav-link px-3 text-dark" href="#" data-category="Biznis">Biznis</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-category='Zdravlje' href="#"> Zdravlje |</a>
+          <a class="nav-link px-3 text-dark" href="#" data-category="Zdravlje">Zdravlje</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-category='Tehnologija' href="#">Tehnologija |</a>
+          <a class="nav-link px-3 text-dark" href="#" data-category="Tehnologija">Tehnologija</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-category='Sport' href="#">Sport |</a>
+          <a class="nav-link px-3 text-dark" href="#" data-category="Sport">Sport</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-category='Automobili' href="#">Automobili |</a>
+          <a class="nav-link px-3 text-dark" href="#" data-category="Automobili">Automobili</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-category='Putovanja' href="#">Putovanja |</a>
+          <a class="nav-link px-3 text-dark" href="#" data-category="Putovanja">Putovanja</a>
         </li>
       </ul>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="create_blog_post.php" class="btn btn-primary btn-sm rounded-pill px-4 fw-semibold shadow-sm">Kreiraj post</a>
+
+        <div class="dropdown">
+          <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://i.pravatar.cc/40" alt="User Avatar" class="rounded-circle me-2" width="40" height="40" />
+            <span class="text-dark fw-semibold">
+              <?php if(isset($_SESSION['username'])): ?>
+                <?= htmlspecialchars($_SESSION['username']) ?>
+              <?php else: ?>
+                Moj nalog
+              <?php endif; ?>
+            </span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="userMenu" style="min-width: 200px;">
+            <?php if(isset($_SESSION['username'])): ?>
+              <li><a class="dropdown-item" href="change_account.php">Izmena ličnih podataka</a></li>
+              <li><a class="dropdown-item" href="#">Promeni email</a></li>
+              <li><a class="dropdown-item" href="#">Promeni password</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="logout.php">Odjava</a></li>
+            <?php else: ?>
+              <li><a class="dropdown-item" href="login.view.php">Login</a></li>
+              <li><a class="dropdown-item" href="register.view.php">Registracija</a></li>
+            <?php endif; ?>
+          </ul>
+        </div>
+      </div>
     </div>
-     <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a href="./create_blog_post.php" class="nav-link">Kreiraj post</a>
-        </li>
-        <div class="dropdown d-flex align-items-center">
-            <a class="btn btn-light btn-sm dropdown-toggle" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-              Moj nalog</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li><a href="./change_account.php" class="dropdown-item">Izmena licnih podataka</a></li>
-              <li><a class="dropdown-item">Promeni email</a></li>
-              <li><a class="dropdown-item">Promeni password</a></li>
-            </ul>
-          </div>
-          <li class="nav-item">
-          <?php if(isset($_SESSION['username'])): ?>
-          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-user"></i> <?= htmlspecialchars($_SESSION['username']) ?></a>
-        </li>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./logout.php">Odjava</a>
-        </li>
-        <?php else: ?>
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../views/login.view.php">Login</a>
-        </li>
-        <?php endif; ?>
-        </ul>
   </div>
 </nav>
 <!-- End of navbar -->
