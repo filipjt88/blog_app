@@ -4,7 +4,8 @@ $title = 'Edit post';
 require_once __DIR__ . '/../parts/top.php'; ?>
 
 <div class="container mt-5">
-    <h2 class="text-center">Izmena posta</h2>
+    <?php require_once __DIR__ . '/../parts/navbar.php'; ?>
+    <h2 class="text-center mt-5">Edit post</h2>
     <div class="row">
         <div class="col-md-6 offset-3">
              <?php if(isset($_GET['error'])): ?>
@@ -20,11 +21,11 @@ require_once __DIR__ . '/../parts/top.php'; ?>
             <img src="<?= htmlspecialchars($post['image']) ?>" alt="Slika posta" class="card-img-top img-thumbnail" style="height: auto; object-fit: cover;">
         </div>
         <div class="mb-3">
-            <label for="content" class="form-label">Sadrzaj</label>
+            <label for="content" class="form-label">Contents</label>
             <textarea name="content" id="content" rows="6" class="form-control"><?= htmlspecialchars($post['content']) ?></textarea>
         </div>
-        <button type="submit" class="btn btn-warning">Sacuvaj izmene</button>
-        <a href="index.php" class="btn btn-outline-dark">Vrati se nazad</a>
+        <button type="submit" class="btn btn-warning">Save changes</button>
+        <a href="index.php" class="btn btn-outline-dark">Back to page</a>
     </form>
         </div>
     </div>

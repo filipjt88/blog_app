@@ -22,30 +22,28 @@ $categories = $stmt->fetchAll();
         <div class="alert alert-danger"><?= htmlspecialchars($_GET['error']) ?></div>
     <?php endif; ?>
 
-    <form id="blogForm" action="create_blog_process.php" method="POST" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label for="title" class="form-label">Naslov</label>
-            <input type="text" name="title" id="title" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="title" class="form-label">Izaberi kategoriju:</label>
-            <select class="form-select" name="category_id" aria-label="Default select example" required>
-                <?php foreach ($categories as $cat): ?>
-                    <option value="<?= $cat['id'] ?>"><?= htmlspecialchars($cat['name']) ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="img" class="form-label">Slika</label>
-            <input type="file" name="image" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="content" class="form-label">Sadrzaj</label>
-            <textarea name="content" id="content" rows="6" class="form-control"></textarea>
-        </div>
-        <a href="index.php" class="btn btn-secondary">Vrati se nazad</a>
-        <button type="submit" class="btn btn-success">Objavi</button>
-    </form>
+    <form id="blogForm" action="create_blog_process.php" method="POST" enctype="multipart/form-data" class="login-form">
+  
+  <label for="title">Naslov</label>
+  <input type="text" name="title" id="title" placeholder="Unesite naslov..." required>
+  
+  <label for="category">Izaberi kategoriju:</label>
+  <select name="category_id" id="category" class="form-control" required>
+    <?php foreach ($categories as $cat): ?>
+      <option value="<?= $cat['id'] ?>"><?= htmlspecialchars($cat['name']) ?></option>
+    <?php endforeach; ?>
+  </select>
+  
+  <label for="image">Slika</label>
+  <input type="file" name="image" id="image" accept="image/*">
+  
+  <label for="content">Sadržaj</label>
+  <textarea name="content" id="content" class="form-control" rows="6" placeholder="Unesite sadržaj..." required></textarea><br>
+  <div class="form-buttons">
+    <button type="submit">Objavi</button><br><br>
+    <a href="index.php" class="btn btn-secondary btn-back">Vrati se nazad</a>
+  </div>
+</form>
         </div>
     </div>
 </div>

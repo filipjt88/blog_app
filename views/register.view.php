@@ -21,7 +21,7 @@
                 <input type="password" id="password_confirm" name="password_confirm" placeholder="Please enter the password repeat..." required>
 
                 <button type="submit">Register</button>
-                <a href="login.view.php" class="register-link">Imate nalog? Prijavite se!</a>
+                <a href="login.view.php" class="register-link">Do you have an account? Sign in!</a>
                 </form>
         </div>
     </div>

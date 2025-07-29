@@ -7,7 +7,7 @@
         <div class="col-md-6 offset-3">
             <div class="login-wrapper">
   <form id="loginForm" action="../login.php" method="POST" class="login-form">
-    <h1>Login</h1>
+        <h1>LogIn</h1>
 
     <label for="email">Email</label>
     <input type="email" name="email" id="email" placeholder="Please enter email..." required>
@@ -16,7 +16,7 @@
     <input type="password" name="password" id="password" placeholder="Please enter the password..." required>
 
     <button type="submit">Login</button>
-    <a class="register-link" href="register.view.php">Nemate nalog? Registrujte se!</a>
+    <a class="register-link" href="register.view.php">Don't have an account? Register!</a>
 
     <?php if(isset($_GET['error'])): ?>
       <div class="alert alert-danger"><?php echo htmlspecialchars($_GET['error']) ?></div>
