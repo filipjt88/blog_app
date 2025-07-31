@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $category_id = isset($_POST['category_id']) ? (int)$_POST['category_id'] : null;
 
     $image_path = null;
-
     // Provera i upload slike
     if (!empty($_FILES['image']['name'])) {
         $target_dir = "uploads/";

@@ -5,7 +5,7 @@ require_once('core/db.php');
 if($_SERVER['REQUEST_METHOD'] === "POST") {
     $email    = trim($_POST['email']);
     $password = trim($_POST['password']);
-// Provera email i passworda koja ne smeju biti prazna za unos
+// Provera email i passworda koja ne smeju biti prazna polja za unos
     if(empty($email) || empty($password)) {
         die("<h3 class='alert-danger'>Sva polja su obavezna!🙂</h3>" . "</br>" . "<a href='views/login.view.php'>Vrati se nazad</a>");
     }

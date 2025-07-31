@@ -1,3 +1,4 @@
+
 <?php 
 session_start();
 require_once 'core/db.php';
@@ -16,12 +17,13 @@ $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = :id");
 $stmt->execute(['id' => $post_id]);
 $post = $stmt->fetch();
 
-// Proveri da li postoji user i da li je vlasnik
+// Provera da li postoji user i da li je vlasnik objave
 if(!$post || $post['user_id'] != $_SESSION['user_id']) {
     header("Location: index.php");
     exit;
 }
 
 include 'views/edit_post.view.php';
-
 ?>
+
+
